@@ -174,7 +174,7 @@ def add_statement():
         data = request.get_json()
         statement = data['statid'].split("#")[-1]  # Identificador da declaração
         pid = data['tipo']  # Tipo de qualificador
-        qual = data['qual']  # QID do qualificador a ser adicionado
+        qual = data['qual'].replace("Q", "")  # QID do qualificador a ser adicionado
 
         token = get_token()
         params = {
