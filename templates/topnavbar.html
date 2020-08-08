@@ -1,0 +1,17 @@
+<nav class="topnav" id="topnavbar">
+    <a tabindex="0" id="inicio" href="{{url_for('inicio')}}" class="active" style="font-family: Satisfy; color:#0068a3">{{_("Trajo")}}</a>
+    <a tabindex="0" id="sobre" href="{{url_for('sobre')}}">{{_("Sobre")}}</a>
+    <a tabindex="0" id="tutorial" href="{{url_for('tutorial')}}">{{_("Como jogar?")}}</a>
+    {% if lang != 'en' %}
+        <a class="right" tabindex="0" href="{{url_for('set_locale', return_to=request.script_root + request.full_path, lang='en')}}"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Flag-us.svg" width="25px" alt="en"></a>
+    {% endif %}
+    {% if lang != 'pt' and lang != 'pt-BR' %}
+        <a class="right" tabindex="0" href="{{url_for('set_locale', return_to=request.script_root + request.full_path, lang='pt')}}"><img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Flag-br.svg" width="25px" alt="pt"></a>
+    {% endif %}
+    {% if username %}
+        <a class="right" tabindex="0" target="_blank" href="https://www.wikidata.org/wiki/Special:Contributions/{{username}}">{{username}}</a>
+    {% else %}
+        <a class="right" tabindex="0" target="_blank" href="{{ url_for('login', next=request.script_root + request.full_path) }}">{{ _("Autenticar-se")}}</a>
+    {% endif %}
+    <a tabindex="0" id="menu" href="javascript:void(0);" class="icon" onclick="menuFunction()" aria-label='{{_("Menu")}}'><i class="fa fa-bars"></i></a>
+</nav>

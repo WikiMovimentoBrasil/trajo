@@ -1,0 +1,337 @@
+{% extends "base.html" %}
+
+{% block title %}{% if metadata.obra_label %}{{ metadata.obra_label[0] }}{% else %}{{ metadata.obra_qid[0] }}{% endif %}{% endblock %}
+
+{% block content %}
+    <div class="w3-row">
+        <div id="image" class="w3-container w3-half">
+            <img id="image_item" alt="{% if metadata.obra_label[0] %}{{ metadata.obra_label[0] }}{% else %}{{ metadata.obra_qid[0] }}{% endif %}" style="max-width: 100%"
+                 src="http://commons.wikimedia.org/wiki/Special:FilePath/{{ metadata.imagem[0]}}">
+        </div>
+            <div id="metadata" class="w3-container w3-half">
+            <table class="table table-responsive table-striped" style="overflow: hidden; font-size: 125%" >
+                <tr>
+                    <th>{{ _("Obra") }}</th>
+                    <td><a tabindex="0" target="_blank" href="https://www.wikidata.org/wiki/{{metadata.obra_qid[0]}}">{{metadata.obra_label[0]}}</a></td>
+                </tr>
+                {% if metadata.instancia %}
+                    <tr>
+                        <th>{{ _("Instância de") }}</th>
+                        <td>
+                            {% for elem in metadata.instancia %}
+                                {% set elem_parts = elem.split('@') %}
+                                <a tabindex="0" target="_blank" href="https://www.wikidata.org/wiki/{{elem_parts[0]}}">{{elem_parts[1]}}</a>{{ ";" if not loop.last }}
+                            {% endfor %}
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if metadata.data %}
+                    <tr>
+                        <th>{{ _("Data") }}</th>
+                        <td>
+                            {% for elem in metadata.data %}{{elem}}{{ ";" if not loop.last }}{% endfor %}
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if metadata.criador %}
+                    <tr>
+                        <th>{{ _("Criador(a)") }}</th>
+                        <td>
+                            {% for elem in metadata.criador %}
+                                {% set elem_parts = elem.split('@') %}
+                                <a tabindex="0" target="_blank" href="https://www.wikidata.org/wiki/{{elem_parts[0]}}">{{elem_parts[1]}}</a>{{ ";" if not loop.last }}
+                            {% endfor %}
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if metadata.material %}
+                    <tr>
+                        <th>{{ _("Material") }}</th>
+                        <td>
+                            {% for elem in metadata.material %}
+                                {% set elem_parts = elem.split('@') %}
+                                <a tabindex="0" target="_blank" href="https://www.wikidata.org/wiki/{{elem_parts[0]}}">{{elem_parts[1]}}</a>{{ ";" if not loop.last }}
+                            {% endfor %}
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if metadata.encomendador %}
+                    <tr>
+                        <th>{{ _("Encomendador") }}</th>
+                        <td>
+                            {% for elem in metadata.encomendador %}
+                                {% set elem_parts = elem.split('@') %}
+                                <a tabindex="0" target="_blank" href="https://www.wikidata.org/wiki/{{elem_parts[0]}}">{{elem_parts[1]}}</a>{{ ";" if not loop.last }}
+                            {% endfor %}
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if metadata.audio %}
+                    <tr>
+                        <th>{{ _("Versão audível") }}</th>
+                        <td>
+                            <audio controls>
+                                <source src="http://commons.wikimedia.org/wiki/Special:FilePath/{{ metadata.audio[0] }}" type="audio/ogg">
+                                {{ _("Seu navegador não suporta este elemento de áudio") }}
+                            </audio>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if depicts_metadata %}
+                    <tr>
+                       <th colspan="2" style="text-align: center">
+                           <h2>
+                               {{ _("Adicione elementos descritivos às pessoas retratadas") }}
+                           </h2>
+                       </th>
+                    </tr>
+                    {% for depicted_entity in depicts_metadata %}
+                        <tr>
+                            <th>
+                                <a title="{{depicted_entity.retrata_descr[0]}}" tabindex="0" target="_blank" href="https://www.wikidata.org/wiki/{{depicted_entity.retrata_qid[0]}}">{{depicted_entity.retrata_label[0]}}</a>
+                            </th>
+                            <td>
+                                <table class="table table-not-striped">
+                                    <tr>
+                                        <th style="width:30%">
+                                            {{ _("Veste") }}
+                                        </th>
+                                        <td>
+                                            {% if username %}<a title="{{ _('Adicionar vestimenta') }}"><button type="button" class="btn btn-primary" data-toggle="modal" data-qid="{{ metadata.obra_qid[0] }}" data-stat-id="{{depicted_entity.retrata_stat_id[0]}}" data-tipo="P3828" data-target="#addModal" style="font-size:125%; background-color: #008000; border-color: #008000; margin: 3px; width:100%">{{ _("Adicionar") }}</button></a>{% endif %}
+                                            {% if 'veste' in depicted_entity %}
+                                                {% for vestimenta in depicted_entity.veste %}
+                                                    {% set veste_elem_parts = vestimenta.split('@') %}
+                                                    <a tabindex="0" title="{{ veste_elem_parts[2] }}">
+                                                        <button type="button"
+                                                                class="btn btn-primary show-stat"
+                                                                data-stat-qid="{{ depicted_entity.retrata_qid[0] }}"
+                                                                data-stat-label="{{ depicted_entity.retrata_label[0] }}"
+                                                                data-stat-descr="{{ depicted_entity.retrata_descr[0] }}"
+                                                                data-stat-id="{{ depicted_entity.retrata_stat_id[0] }}"
+                                                                data-qual-qid="{{ veste_elem_parts[0] }}"
+                                                                data-qual-label="{{ veste_elem_parts[1] }}"
+                                                                data-qual-descr="{{ veste_elem_parts[2] }}"
+                                                                data-type="veste"
+                                                                data-toggle="modal"
+                                                                data-target="#showModal"
+                                                                style="font-size:125%; background-color: #0068a3; border-color: #0068a3; margin: 3px; width:100%">{{ veste_elem_parts[1] }}
+                                                        </button>
+                                                    </a>
+                                                    {% if loop.last %}<br>{% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th style="width:30%">
+                                                {{ _("Usa") }}
+                                            </th>
+                                            <td>
+                                                {% if username %}<a title="{{ _('Adicionar objetos usados') }}"><button type="button" class="btn btn-primary" data-toggle="modal" data-qid="{{ metadata.obra_qid[0] }}" data-tipo="P2283" data-stat-id="{{ depicted_entity.retrata_stat_id[0] }}" data-target="#addModal" style="font-size:125%; background-color: #008000; border-color: #008000; margin: 3px; width:100%" >{{ _("Adicionar") }}</button></a>{% endif %}
+                                                {% if 'usa' in depicted_entity %}
+                                                    {% for uso in depicted_entity.usa %}
+                                                        {% set usa_elem_parts = uso.split('@') %}
+                                                        <a tabindex="0" title="{{ usa_elem_parts[2] }}">
+                                                            <button type="button"
+                                                                    class="btn btn-primary show-stat"
+                                                                    data-stat-qid="{{ depicted_entity.retrata_qid[0] }}"
+                                                                    data-stat-label="{{ depicted_entity.retrata_label[0] }}"
+                                                                    data-stat-descr="{{ depicted_entity.retrata_descr[0] }}"
+                                                                    data-stat-id="{{ depicted_entity.retrata_stat_id[0] }}"
+                                                                    data-qual-qid="{{ usa_elem_parts[0] }}"
+                                                                    data-qual-label="{{ usa_elem_parts[1] }}"
+                                                                    data-qual-descr="{{ usa_elem_parts[2] }}"
+                                                                    data-type="uso"
+                                                                    data-toggle="modal"
+                                                                    data-target="#showModal"
+                                                                    style="font-size:125%; background-color: #0068a3; border-color: #0068a3; margin: 3px; width:100%">{{ usa_elem_parts[1] }}
+                                                            </button>
+                                                        </a>
+                                                        {% if loop.last %}<br>{% endif %}
+                                                    {% endfor %}
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th style="width:30%">
+                                                {{ _("Atributos") }}
+                                            </th>
+                                            <td>
+                                                {% if username %}<a title="{{ _('Adicionar atributos') }}"><button type="button" class="btn btn-primary" data-toggle="modal" data-qid="{{ metadata.obra_qid[0] }}" data-tipo="P1354" data-stat-id="{{ depicted_entity.retrata_stat_id[0] }}" data-target="#addModal" style="font-size:125%; background-color: #008000; border-color: #008000; margin: 3px; width:100%">{{ _("Adicionar") }}</button></a>{% endif %}
+                                                {% if 'atributos' in depicted_entity %}
+                                                    {% for atributo in depicted_entity.atributos %}
+                                                        {% set atributo_elem_parts = atributo.split('@') %}
+                                                        <a tabindex="0" title="{{ atributo_elem_parts[2] }}">
+                                                            <button type="button"
+                                                                    class="btn btn-primary show-stat"
+                                                                    data-stat-qid="{{ depicted_entity.retrata_qid[0] }}"
+                                                                    data-stat-label="{{ depicted_entity.retrata_label[0] }}"
+                                                                    data-stat-descr="{{ depicted_entity.retrata_descr[0] }}"
+                                                                    data-stat-id="{{ depicted_entity.retrata_stat_id[0] }}"
+                                                                    data-qual-qid="{{ atributo_elem_parts[0] }}"
+                                                                    data-qual-label="{{ atributo_elem_parts[1] }}"
+                                                                    data-qual-descr="{{ atributo_elem_parts[2] }}"
+                                                                    data-type="atributo"
+                                                                    data-toggle="modal"
+                                                                    data-target="#showModal"
+                                                                    style="font-size:125%; background-color: #0068a3; border-color: #0068a3; margin: 3px; width:100%">{{ atributo_elem_parts[1] }}
+                                                            </button>
+                                                        </a>
+                                                        {% if loop.last %}<br>{% endif %}
+                                                    {% endfor %}
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </table>
+        </div>
+    </div>
+    <div class="w3-container">
+        <div class="modal " id="showModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">{{ _("Declaração") }}</h3>
+                        <button type="button" class="close" data-dismiss="modal" style="font-size:125%; ">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <a id='statement' tabindex='0' target='_blank' href='' title='' style="font-size:125%; ">{{ _("Declaração") }}</a>: <span id="statement_descr">{{ _("Descrição da declaração") }}</span>
+                        <ul>
+                            <a id='qualifier' tabindex='0' target='_blank' href='' title='' style="font-size:125%; ">{{ _("Qualificador") }}</a>: <span id="qualifier_descr">{{ _("Descrição do qualificador") }}</span>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="font-size:125%; ">{{ _("Cancelar") }}</button>
+                        <a id='gotostatement' tabindex='0' target='_blank' href='' title='' style="color: white">
+                            <button id="gotostatement_button" type="button" class="btn btn-primary" style="font-size:125%; background-color: #0068a3">
+                                {{ _("Ir para declaração") }}
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="addModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">{{ _("Declaração") }}</h3>
+                        <button type="button" class="close" data-dismiss="modal" style="font-size:125%; ">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="search_field" class="col-form-label" style="font-size: 125%">{{ _("Adicionar declaração:") }}</label>
+                        <input type="text" class="form-control" placeholder="{{ _('Pesquise no Wikidata') }}" id="search_field" style="font-size: 125%">
+                        <br>
+                        <span id="select_instruction" style="font-size: 125%">{{ _("Selecione uma opção:") }}</span><br>
+                        <form id="search_results">
+
+                        </form>
+                    </div>
+                    <div class="modal-footer" id="secondModal">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="font-size:125%; ">{{ _("Cancelar") }}</button>
+                        <button type="button" id="addqualifier" class="btn btn-primary" style="font-size:125%; background-color: #0068a3">{{ _("Adicionar declaração") }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('#showModal').on('show.bs.modal', function (event) {
+            var stat_qid = $(event.relatedTarget).data('stat-qid');
+            var stat_label = $(event.relatedTarget).data('stat-label');
+            var stat_descr = $(event.relatedTarget).data('stat-descr');
+            var stat_id = $(event.relatedTarget).data('stat-id');
+            var qual_qid = $(event.relatedTarget).data('qual-qid');
+            var qual_label = $(event.relatedTarget).data('qual-label');
+            var qual_descr = $(event.relatedTarget).data('qual-descr');
+
+            $(this).find(".modal-body #statement").attr('href','https://www.wikidata.org/wiki/'+stat_qid);
+            $(this).find(".modal-body #statement").attr('title',stat_descr);
+            $(this).find(".modal-body #statement").text(stat_label);
+            $(this).find(".modal-body #statement_descr").text(stat_descr);
+
+            $(this).find(".modal-body #qualifier").attr('href','https://www.wikidata.org/wiki/'+qual_qid);
+            $(this).find(".modal-body #qualifier").attr('title',qual_descr);
+            $(this).find(".modal-body #qualifier").text(qual_label);
+            $(this).find(".modal-body #qualifier_descr").text(qual_descr);
+
+            $(this).find(".modal-footer #gotostatement").attr('href',stat_id);
+        });
+
+        $('#addModal').on('show.bs.modal', function (event) {
+            var stat_qid = $(event.relatedTarget).data('stat-id');
+            var qid_ = $(event.relatedTarget).data('qid');
+            var tipo = $(event.relatedTarget).data('tipo');
+
+            $(this).find("#secondModal #addqualifier").attr('data-stat-id',stat_qid);
+            $(this).find("#secondModal #addqualifier").attr('data-qid',qid_);
+            $(this).find("#secondModal #addqualifier").attr('data-tipo',tipo);
+        })
+
+        $('#addqualifier').on('click', function() {
+            var qual = $("input[name='qualifier_option']:checked").val();
+            var qid = $(this).data('qid');
+            var stat_id = $(this).data('stat-id');
+            var tipo = $(this).data('tipo');
+            var data = {
+                'id': qid,
+                'statid': stat_id,
+                'tipo': tipo,
+                'qual': qual,
+            }
+            $.ajax({
+                url: "/add_stat",
+                type: "POST",
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                dataType: "json",
+
+                success: function(response) {
+                    alert(response['response']);
+                    $("#search_results").empty();
+                    },
+                error: function() {
+                    alert('Error');
+                }
+            });
+            $("#search_results").empty();
+        });
+        $("#search_field").bind('keyup', function(event){
+            if ($(this)[0].value){
+                search();
+            }
+            else {
+                $("#search_results").empty();
+            }
+        });
+
+        function search(){
+            var input = $('#search_field')[0].value;
+            var data = {'term': input}
+            console.log(input);
+            $.ajax({
+                url: "/search",
+                type: "POST",
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                dataType: "json",
+
+                success: function(response) {
+                    $("#search_results").empty()
+                    for (var i = 0; i < (Math.min(15,response.length)); i++){
+                        $("#search_results").append('<input type="radio" id="'+response[i]["qid"]+'" name="qualifier_option" value="'+response[i]["qid"]+'"> ' +
+                            '<label for="'+response[i]["qid"]+'" style="font-size: 125%"><b style="color: #004266;font-size: 125%">'+response[i]["label"]+' ('+response[i]["qid"]+')</b></label>: '+response[i]["descr"]+'<br>');
+                    }
+                    console.log(response);
+                },
+                error: function() {
+                    alert('{{_("Selecione um elemento")}}');
+                }
+            });
+        };
+    </script>
+{% endblock %}

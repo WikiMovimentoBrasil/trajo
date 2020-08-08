@@ -1,0 +1,145 @@
+body {
+    font-family: Josefin Sans, sans-serif;
+    font-size: 115%;
+    padding-right: 0 !important;
+}
+h1, h2 {
+    font-family: Josefin Sans, sans-serif;
+}
+
+a {
+    color: #0068a3;
+}
+
+.topnav {
+  background-color: #0068a3;
+  overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 15px;
+    text-decoration: none;
+    font-size: 150%;
+}
+
+.topnav a.right {
+    float: right;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 15px;
+    text-decoration: none;
+    font-size: 150%;
+}
+
+.topnav a:hover {
+    background-color: #002438;
+    color: white;
+}
+
+.topnav a.active {
+    background-color: white;
+                    color: #004266;
+    font-weight: bold;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #metadata {
+        width: 100%;
+    }
+    #image {
+        width: 100%;
+    }
+}
+
+#image {
+    position: relative;
+}
+
+.tag {
+    float: right;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 1000;
+}
+
+.table-not-striped tbody tr:nth-of-type(odd) {
+    background-color: transparent!important;
+}
+
+input {
+    font-family: Josefin Sans, sans-serif, "Font Awesome 5 Free";
+    font-weight: 100;
+}
+
+button {
+    font-size: 125%;
+}
+
+.grid_image {
+    overflow: hidden;
+    margin-bottom:10px;
+    position:relative;
+    float:left;
+}
+
+.grid_image img {
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+.overlay {
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: #394d4c;
+    overflow: hidden;
+    width:100%;
+    height:0;
+}
+
+.text-area {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    text-align: center;
+}
+
+.grid_image:hover .overlay {
+    height: 100%;
+}

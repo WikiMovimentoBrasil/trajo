@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("Página inicial") }}{% endblock %}
+
+{% block banner %}
+    <h1 style="font-family: Satisfy;font-size: 400%;text-align: center;color: #0068a3; padding:30px">
+        Trajo
+    </h1>
+    <h2 style="text-align: center">Descreva vestimentas, objetos usados e atributos das obras do Museu do Ipiranga</h2>
+{% endblock %}
+
+{% block content %}
+    <div class="w3-container w3-third"></div>
+    <div class="w3-container w3-third">
+        <a href="{{ url_for('colecao', type='Homens') }}" title="{{ _('Homens') }}">
+            <button type="button"
+                    class="btn btn-primary"
+                    style="font-size:150%;
+                    background-color: #0068a3;
+                    border-color: #0068a3;
+                    margin: 3px;
+                    width:100%">
+                {{ _('Homens') }}
+            </button>
+        </a>
+        <a href="{{ url_for('colecao', type='Mulheres') }}" title="{{ _('Mulheres') }}">
+            <button type="button"
+                    class="btn btn-primary"
+                    style="font-size:150%;
+                    background-color: #0068a3;
+                    border-color: #0068a3;
+                    margin: 3px;
+                    width:100%">
+                {{ _('Mulheres') }}
+            </button>
+        </a>
+        <a href="{{ url_for('colecao', type='Idosos') }}" title="{{ _('Idosos') }}">
+            <button type="button"
+                    class="btn btn-primary"
+                    style="font-size:150%;
+                    background-color: #0068a3;
+                    border-color: #0068a3;
+                    margin: 3px;
+                    width:100%">
+                {{ _('Idosos') }}
+            </button>
+        </a>
+        <a href="{{ url_for('colecao', type='Crianças') }}" title="{{ _('Crianças') }}">
+            <button type="button"
+                    class="btn btn-primary"
+                    style="font-size:150%;
+                    background-color: #0068a3;
+                    border-color: #0068a3;
+                    margin: 3px;
+                    width:100%">
+                {{ _('Crianças') }}
+            </button>
+        </a>
+        <a href="{{ url_for('colecao', type='Pessoas conhecidas') }}" title="{{ _('Pessoas conhecidas') }}">
+            <button type="button"
+                    class="btn btn-primary"
+                    style="font-size:150%;
+                    background-color: #0068a3;
+                    border-color: #0068a3;
+                    margin: 3px;
+                    width:100%">
+                {{ _('Pessoas conhecidas') }}
+            </button>
+        </a>
+        <a href="{{ url_for('colecao', type='Miscelânea') }}" title="{{ _('Miscelânea') }}">
+            <button type="button"
+                    class="btn btn-primary"
+                    style="font-size:150%;
+                    background-color: #0068a3;
+                    border-color: #0068a3;
+                    margin: 3px;
+                    width:100%">
+                {{ _('Miscelânea') }}
+            </button>
+        </a>
+    </div>
+{% endblock %}

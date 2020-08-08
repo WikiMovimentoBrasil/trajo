@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}{{ filtro }}{% endblock %}
+
+{% block banner %}
+    <h1 style="font-family: Satisfy;font-size: 400%;text-align: center;color: #0068a3; padding:30px">
+        Trajo
+    </h1>
+{% endblock %}
+
+{% block content %}
+    <div class="w3-container w3-half">
+        Pequeno texto sobre a seleção.
+    </div>
+    {% if collection %}
+        <div id="pagination-container" style="padding: 30px;alignment: center"></div>
+        <div id="image_list" class="container" style="width:100%;">
+            <div class="container" id="image_container" style="column-width:200px;"></div>
+        </div>
+    {% endif %}
+    <script>
+    $('#pagination-container').pagination({
+        dataSource: {{ collection|tojson }},
+        pageSize: 20,
+        pageRange: null,
+        callback: function(data, pagination) {
+            var html = simpleTemplating(data);
+            $("#image_container").html(html);
+        }
+    });
+
+    function simpleTemplating(data) {
+        var html = "";
+        $.each(data, function(index, item){
+            html += '<a tabindex="0" href="/item/'+item.qid+'">' +
+                '<div class="grid_image" style="width: 200px;">' +
+                '<img src="https://commons.wikimedia.org/wiki/Special:FilePath/'+
+                item.imagem+
+                '?width=300px" width="100%" alt="'+
+                item.label+
+                '" style="object-fit:contain;max-widht:1000px; max-height:500px; align:center;"/>' +
+                '<div class="overlay"><div class="text-area">'+item.label+'</div></div></div></a>';
+        });
+        return html;
+    }
+</script>
+{% endblock %}

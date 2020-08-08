@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Satisfy" type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'pagination.css') }}" type='text/css'>
+    <link rel="stylesheet" type="text/css" href="magnifier.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename= 'pagination.js') }}"></script>
+
+    <title>{% block title %}{{ _("Página inicial") }}{% endblock %} | {{ _("Trajo") }}</title>
+    <script>
+        function menuFunction() {
+            var x = document.getElementById("topnavbar");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</head>
+<body style="height: 100%">
+{% block navbar %}
+    {% with lang="pt", username=username %}
+        {% include 'topnavbar.html' %}
+    {% endwith %}
+{% endblock %}
+<main class="w3-container" id="content" style="min-height: 73.5%;overflow: auto;padding: 0">
+    {% block banner %}
+        <h1 style="font-family: Satisfy;font-size: 400%;text-align: center;color: #0068a3; padding:30px">
+            Trajo
+        </h1>
+    {% endblock %}
+    {% block content %}{% endblock %}
+</main>
+<footer style="text-align:left;position: relative;padding: 0px 15px 0px 15px" id="footer">
+    <hr>
+    <p style="font-size:100%;">
+        {% set projeto %}<a tabindex="0" target='_blank' aria-label='{{_("Projeto Novo Museu do Ipiranga")}}' href='https://pt.wikipedia.org/wiki/Wikip%C3%A9dia:GLAM/Museu_Paulista#Projeto_Novo_Museu_do_Ipiranga'>{{_("Projeto Novo Museu do Ipiranga")}}</a>{% endset %}
+        {{_("<i>Trajo</i> é um aplicativo gamificado desenvolvido no contexto do <i><b>%(projeto)s</b></i>, organizado pelo <b>Grupo de Usuários Wiki Movimento Brasil</b> e o <b>Museu do Ipiranga</b>, em parceria com a <b>Fundação Banco do Brasil</b> e com realização da <b>Universidade de São Paulo</b> e a <b>Fundação de Apoio à Universidade de São Paulo</b>.", projeto=projeto)}}
+    </p>
+</footer>
+</body>
+</html>
