@@ -8,8 +8,8 @@
             <img id="image_item" alt="{% if metadata.obra_label[0] %}{{ metadata.obra_label[0] }}{% else %}{{ metadata.obra_qid[0] }}{% endif %}" style="max-width: 100%"
                  src="http://commons.wikimedia.org/wiki/Special:FilePath/{{ metadata.imagem[0]}}">
         </div>
-            <div id="metadata" class="w3-container w3-half">
-            <table class="table table-responsive table-striped" style="overflow: hidden; font-size: 125%" >
+        <div id="metadata" class="w3-container w3-half">
+            <table class="table table-responsive table-striped" style="overflow: hidden; font-size: 125%; width: 100%; table-layout: fixed; overflow-wrap: break-word;">
                 <tr>
                     <th>{{ _("Obra") }}</th>
                     <td><a tabindex="0" target="_blank" href="https://www.wikidata.org/wiki/{{metadata.obra_qid[0]}}">{{metadata.obra_label[0]}}</a></td>
@@ -77,21 +77,20 @@
                         </td>
                     </tr>
                 {% endif %}
-                {% if depicts_metadata %}
-                    <tr>
-                       <th colspan="2" style="text-align: center">
-                           <h2>
-                               {{ _("Adicione elementos descritivos às pessoas retratadas") }}
-                           </h2>
-                       </th>
-                    </tr>
+            </table>
+            {% if depicts_metadata %}
+                <div class="w3-container">
+                    <h2>
+                        {{ _("Adicione elementos descritivos às pessoas retratadas") }}
+                    </h2>
+                </div>
+                <div class="w3-container">
                     {% for depicted_entity in depicts_metadata %}
-                        <tr>
-                            <th>
-                                <a title="{{depicted_entity.retrata_descr[0]}}" tabindex="0" target="_blank" href="https://www.wikidata.org/wiki/{{depicted_entity.retrata_qid[0]}}">{{depicted_entity.retrata_label[0]}}</a>
-                            </th>
-                            <td>
-                                <table class="table table-not-striped">
+                        <div class="w3-container w3-third" style="padding: 0">
+                            <a title="{{depicted_entity.retrata_descr[0]}}" tabindex="0" target="_blank" href="https://www.wikidata.org/wiki/{{depicted_entity.retrata_qid[0]}}" style="font-size: 125%">{{depicted_entity.retrata_label[0]}}</a>
+                        </div>
+                        <div class="w3-container w3-twothird" style="padding: 0">
+                            <table class="table table-not-striped" style="width:100%; font-size: 125%">
                                     <tr>
                                         <th style="width:30%">
                                             {{ _("Veste") }}
@@ -183,11 +182,10 @@
                                             </td>
                                         </tr>
                                 </table>
-                            </td>
-                        </tr>
+                        </div>
                     {% endfor %}
-                {% endif %}
-            </table>
+                </div>
+            {% endif %}
         </div>
     </div>
     <div class="w3-container">

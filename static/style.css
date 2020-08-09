@@ -3,6 +3,7 @@ body {
     font-size: 115%;
     padding-right: 0 !important;
 }
+
 h1, h2 {
     font-family: Josefin Sans, sans-serif;
 }
@@ -142,4 +143,9 @@ button {
 
 .grid_image:hover .overlay {
     height: 100%;
+}
+
+tbody {
+    width: 100%;
+    display: table;
 }
