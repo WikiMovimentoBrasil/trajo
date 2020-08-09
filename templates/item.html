@@ -236,6 +236,8 @@
                 </div>
             </div>
         </div>
+        <span id="success" style="display: none" data-value="{{ _('Declaração inserida com sucesso! Dentro de alguns minutos, ela poderá ser vista nesta página.') }}"></span>
+        <span id="error" style="display: none" data-value="{{ _('Ocorreu um erro.') }}"></span>
     </div>
     <script>
         $('#showModal').on('show.bs.modal', function (event) {
@@ -271,6 +273,8 @@
         })
 
         $('#addqualifier').on('click', function() {
+            var success = $("#sucess").data('success');
+            var error = $("#error").data('error');
             var qual = $("input[name='qualifier_option']:checked").val();
             var qid = $(this).data('qid');
             var stat_id = $(this).data('stat-id');
@@ -288,15 +292,13 @@
                 contentType: "application/json",
                 dataType: "json",
 
-                success: function(response) {
-                    alert(response['response']);
-                    $("#search_results").empty();
+                success: function() {
+                    alert(success);
                     },
                 error: function() {
-                    alert('Error');
+                    alert(error);
                 }
             });
-            $("#search_results").empty();
         });
         $("#search_field").bind('keyup', function(event){
             if ($(this)[0].value){
@@ -324,7 +326,6 @@
                         $("#search_results").append('<input type="radio" id="'+response[i]["qid"]+'" name="qualifier_option" value="'+response[i]["qid"]+'"> ' +
                             '<label for="'+response[i]["qid"]+'" style="font-size: 125%"><b style="color: #004266;font-size: 125%">'+response[i]["label"]+' ('+response[i]["qid"]+')</b></label>: '+response[i]["descr"]+'<br>');
                     }
-                    console.log(response);
                 },
                 error: function() {
                     alert('{{_("Selecione um elemento")}}');

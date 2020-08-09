@@ -198,7 +198,8 @@ def add_statement():
         results = api_post_request(params)
 
         return jsonify(results.status_code)
-    return render_template('item.html')
+    else:
+        return jsonify("204")
 
 
 # Requisição para procurar entidades e filtrá-las pelos tesauros
