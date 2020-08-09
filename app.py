@@ -179,7 +179,7 @@ def add_statement():
         token = get_token()
         params = {
             "action": "wbsetqualifier",
-            "format": "format",
+            "format": "json",
             "claim": statement,
             "property": pid,
             "value": "{\"entity-type\":\"item\",\"numeric-id\":" + str(qual) + "}",
