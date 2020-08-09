@@ -197,7 +197,7 @@ def add_statement():
 
         results = api_post_request(params)
 
-        return jsonify(results=results)
+        return jsonify(results.status_code)
     return render_template('item.html')
 
 
