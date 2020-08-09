@@ -131,16 +131,24 @@ def tutorial():
 @app.route('/colecao/<type>')
 def colecao(type):
     username = get_username()
-    with open(os.path.join(app.static_folder, 'queries.json')) as category_queries:
+    lang = get_locale()
+    with open(os.path.join(app.static_folder, 'queries.json'), encoding="utf-8") as category_queries:
         all_queries = json.load(category_queries)
 
     try:
         selected_query = all_queries[type]["query"]
+        gender_marker = all_queries[type]["gender_marker"]
+        if get_locale == "en":
+            descriptor = all_queries[type]["descriptor"]["en"]
+        else:
+            descriptor = all_queries[type]["descriptor"]["pt-br"]
         selection = query_by_type(selected_query)
         return render_template("colecao.html",
                                collection=selection,
                                username=username,
-                               lang=get_locale())
+                               lang=lang,
+                               descriptor=descriptor,
+                               gender_marker=gender_marker)
     except:
         return redirect(url_for('inicio'))
 
@@ -193,6 +201,7 @@ def add_statement():
     return render_template('item.html')
 
 
+# Requisição para procurar entidades e filtrá-las pelos tesauros
 @app.route('/search', methods=['GET', 'POST'])
 def search_entity():
     if request.method == "POST":

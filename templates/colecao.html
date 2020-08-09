@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
-{% block title %}{{ filtro }}{% endblock %}
+{% block title %}{{ descriptor }}{% endblock %}
+{% block scripts %}
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'pagination.css') }}" type='text/css'>
+{% endblock %}
 
 {% block banner %}
     <h1 style="font-family: Satisfy;font-size: 400%;text-align: center;color: #0068a3; padding:30px">
@@ -9,13 +12,19 @@
 {% endblock %}
 
 {% block content %}
-    <div class="w3-container w3-half">
-        Pequeno texto sobre a seleção.
+    <div class="w3-container" style="text-align: center; padding: 30px; font-size: 135%">
+        {% set descrip %}{{ descriptor }}{% endset %}
+        {% set gender %}{{ gender_marker }}{% endset %}
+        {{ _("Esta seleção de obras do Museu do Ipiranga apresenta descritores que identificam <i>%(p180)s</i> retratad%(p21)ss.", p180=descrip, p21=gender) }}
+        <br>
+        {% set quantidade %}{{ collection|length }}{% endset %}
+        {% set pginicial %}<a tabindex="0" aria-label='{{_("Página inicial")}}' href='{{ url_for("inicio") }}'>{{_("Página inicial")}}</a>{% endset %}
+        {{ _("São %(quant)s obras selecionadas. Para navegar por outras seleções de obras, volte à %(home)s.", quant=quantidade, home=pginicial) }}
     </div>
     {% if collection %}
-        <div id="pagination-container" style="padding: 30px;alignment: center"></div>
+        <div id="pagination-container" style="padding: 30px"></div>
         <div id="image_list" class="container" style="width:100%;">
-            <div class="container" id="image_container" style="column-width:200px;"></div>
+            <div class="container" id="image_container" style="column-count: 4; column-width:250px;"></div>
         </div>
     {% endif %}
     <script>
@@ -33,12 +42,12 @@
         var html = "";
         $.each(data, function(index, item){
             html += '<a tabindex="0" href="/item/'+item.qid+'">' +
-                '<div class="grid_image" style="width: 200px;">' +
+                '<div class="grid_image" style="width:100%">' +
                 '<img src="https://commons.wikimedia.org/wiki/Special:FilePath/'+
                 item.imagem+
-                '?width=300px" width="100%" alt="'+
+                '?width=500px" width="100%" height=auto alt="'+
                 item.label+
-                '" style="object-fit:contain;max-widht:1000px; max-height:500px; align:center;"/>' +
+                '" style="object-fit:contain;max-widht:1000px; align:center;"/>' +
                 '<div class="overlay"><div class="text-area">'+item.label+'</div></div></div></a>';
         });
         return html;
