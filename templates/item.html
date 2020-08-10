@@ -236,8 +236,6 @@
                 </div>
             </div>
         </div>
-        <button id="success" style="display: none" data-value="{{ _('Declaração inserida com sucesso! Dentro de alguns minutos, ela poderá ser vista nesta página.') }}"></button>
-        <button id="error" style="display: none" data-value="{{ _('Ocorreu um erro.') }}"></button>
     </div>
     <script>
         $('#showModal').on('show.bs.modal', function (event) {
@@ -273,8 +271,6 @@
         })
 
         $('#addqualifier').on('click', function() {
-            var success = $("#sucess").data('value');
-            var error = $("#error").data('value');
             var qual = $("input[name='qualifier_option']:checked").val();
             var qid = $(this).data('qid');
             var stat_id = $(this).data('stat-id');
@@ -293,10 +289,10 @@
                 dataType: "json",
 
                 success: function() {
-                    alert(success);
+                    alert("Declaração inserida com sucesso!");
                     },
                 error: function() {
-                    alert(error);
+                    alert("Ocorreu algum erro!");
                 }
             });
         });
