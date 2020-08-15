@@ -211,20 +211,14 @@
         </div>
     </div>
     <script>
-        $(document).ready(function() {
-            $(".modal").on("hidden.bs.modal", function() {
-                $(".modal-body1").html("Where did he go?!?!?!");
-            });
-        });
-
         $('#showModal').on('show.bs.modal', function (event) {
-            var stat_qid = $(event.relatedTarget).data('stat-qid');
-            var stat_label = $(event.relatedTarget).data('stat-label');
-            var stat_descr = $(event.relatedTarget).data('stat-descr');
-            var stat_id = $(event.relatedTarget).data('stat-id');
-            var qual_qid = $(event.relatedTarget).data('qual-qid');
-            var qual_label = $(event.relatedTarget).data('qual-label');
-            var qual_descr = $(event.relatedTarget).data('qual-descr');
+            var stat_qid = $(event.relatedTarget).attr('data-stat-qid');
+            var stat_label = $(event.relatedTarget).attr('data-stat-label');
+            var stat_descr = $(event.relatedTarget).attr('data-stat-descr');
+            var stat_id = $(event.relatedTarget).attr('data-stat-id');
+            var qual_qid = $(event.relatedTarget).attr('data-qual-qid');
+            var qual_label = $(event.relatedTarget).attr('data-qual-label');
+            var qual_descr = $(event.relatedTarget).attr('data-qual-descr');
 
             $(this).find(".modal-body #statement").attr('href','https://www.wikidata.org/wiki/'+stat_qid);
             $(this).find(".modal-body #statement").attr('title',stat_descr);
@@ -240,9 +234,9 @@
         });
 
         $('#addModal').on('show.bs.modal', function (event) {
-            var stat_qid = $(event.relatedTarget).data('stat-id');
-            var qid_ = $(event.relatedTarget).data('qid');
-            var tipo = $(event.relatedTarget).data('tipo');
+            var stat_qid = $(event.relatedTarget).attr('data-stat-id');
+            var qid_ = $(event.relatedTarget).attr('data-qid');
+            var tipo = $(event.relatedTarget).attr('data-tipo');
 
             $(this).find("#secondModal #addqualifier").attr('data-stat-id',stat_qid);
             $(this).find("#secondModal #addqualifier").attr('data-qid',qid_);
@@ -253,14 +247,15 @@
             $(this).find("#secondModal #addqualifier").attr('data-stat-id',"");
             $(this).find("#secondModal #addqualifier").attr('data-qid',"");
             $(this).find("#secondModal #addqualifier").attr('data-tipo',"");
+            $(this).find("#search_field").empty();
             $("#search_results").empty();
         })
 
         $('#addqualifier').on('click', function() {
             var qual = $("input[name='qualifier_option']:checked").val();
-            var qid = $(this).data('qid');
-            var stat_id = $(this).data('stat-id');
-            var tipo = $(this).data('tipo');
+            var qid = $(this).attr('data-qid');
+            var stat_id = $(this).attr('data-stat-id');
+            var tipo = $(this).attr('data-tipo');
             var data = {
                 'id': qid,
                 'statid': stat_id,
