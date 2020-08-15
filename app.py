@@ -30,6 +30,10 @@ def global_user():
 
 @app.route('/login')
 def login():
+    next_page = request.args.get('next')
+    if next_page:
+        session['after_login'] = next_page
+
     client_key = app.config['CONSUMER_KEY']
     client_secret = app.config['CONSUMER_SECRET']
     base_url = 'https://www.wikidata.org/w/index.php'
@@ -72,8 +76,9 @@ def oauth_callback():
     oauth_tokens = oauth.fetch_access_token(access_token_url)
     session['owner_key'] = oauth_tokens.get('oauth_token')
     session['owner_secret'] = oauth_tokens.get('oauth_token_secret')
+    next_page = session.get('after_login')
 
-    return redirect(url_for("inicio"))
+    return redirect(next_page)
 
 
 # Função para pegar a língua de preferência do usuário
