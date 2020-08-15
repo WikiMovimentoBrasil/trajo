@@ -1,6 +1,6 @@
 {
   "homens":{
-    "query": "SELECT DISTINCT ?item_qid ?item_label (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} VALUES ?retrata {wd:Q8441 wd:Q3010 wd:Q9238344 wd:Q177232} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label",
+    "query": "SELECT DISTINCT ?item_qid ?item_label ?date_modified (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} VALUES ?retrata {wd:Q8441 wd:Q3010 wd:Q9238344 wd:Q177232} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. ?item schema:dateModified ?date_modified. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label ?date_modified ORDER BY ASC(?date_modified)",
     "descriptor": {
       "en": "Men",
       "pt-br": "Homens"
@@ -8,7 +8,7 @@
     "gender_marker": "o"
   },
   "mulheres":{
-    "query": "SELECT DISTINCT ?item_qid ?item_label (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} VALUES ?retrata {wd:Q467 wd:Q7560 wd:Q308194 wd:Q9235758} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label",
+    "query": "SELECT DISTINCT ?item_qid ?item_label ?date_modified (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} VALUES ?retrata {wd:Q467 wd:Q7560 wd:Q308194 wd:Q9235758} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. ?item schema:dateModified ?date_modified. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label ?date_modified ORDER BY ASC(?date_modified)",
     "descriptor": {
       "en": "Women",
       "pt-br": "Mulheres"
@@ -16,7 +16,7 @@
     "gender_marker": "a"
   },
   "jovens": {
-    "query": "SELECT DISTINCT ?item_qid ?item_label (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} VALUES ?retrata {wd:Q7569 wd:Q998 wd:Q3010 wd:Q3031} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label",
+    "query": "SELECT DISTINCT ?item_qid ?item_label ?date_modified (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} VALUES ?retrata {wd:Q7569 wd:Q998 wd:Q3010 wd:Q3031} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. ?item schema:dateModified ?date_modified. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label ?date_modified ORDER BY ASC(?date_modified)",
     "descriptor": {
       "en": "Young",
       "pt-br": "Jovens"
@@ -24,7 +24,7 @@
     "gender_marker": "o"
   },
   "idosos": {
-    "query": "SELECT DISTINCT ?item_qid ?item_label (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} VALUES ?retrata {wd:Q9238344 wd:Q9235758 wd:Q191089} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label",
+    "query": "SELECT DISTINCT ?item_qid ?item_label ?date_modified (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} VALUES ?retrata {wd:Q9238344 wd:Q9235758 wd:Q191089} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. ?item schema:dateModified ?date_modified. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label ?date_modified ORDER BY ASC(?date_modified)",
     "descriptor": {
       "en": "Elderly",
       "pt-br": "Idosos"
@@ -32,7 +32,7 @@
     "gender_marker": "o"
   },
   "nacionalidades": {
-    "query": "SELECT DISTINCT ?item_qid ?item_label (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. ?retrata wdt:P31 wd:Q231002. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label",
+    "query": "SELECT DISTINCT ?item_qid ?item_label ?date_modified (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. ?retrata wdt:P31 wd:Q231002. ?item schema:dateModified ?date_modified. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label ?date_modified ORDER BY ASC(?date_modified)",
     "descriptor": {
       "en": "Nationalities",
       "pt-br": "Nacionalidades"
@@ -40,7 +40,7 @@
     "gender_marker": "a"
   },
   "etnias": {
-    "query": "SELECT DISTINCT ?item_qid ?item_label (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. ?retrata wdt:P31/wdt:P279* wd:Q41710. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label",
+    "query": "SELECT DISTINCT ?item_qid ?item_label ?date_modified (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. ?retrata wdt:P31/wdt:P279* wd:Q41710. ?item schema:dateModified ?date_modified. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label ?date_modified ORDER BY ASC(?date_modified)",
     "descriptor": {
       "en": "Ethnicities",
       "pt-br": "Etnias"
@@ -48,7 +48,7 @@
     "gender_marker": "a"
   },
   "ocupacoes": {
-    "query": "SELECT DISTINCT ?item_qid ?item_label (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. ?retrata wdt:P31/wdt:P279* wd:Q12737077. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label",
+    "query": "SELECT DISTINCT ?item_qid ?item_label ?date_modified (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. ?retrata wdt:P31/wdt:P279* wd:Q12737077. ?item schema:dateModified ?date_modified. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label ?date_modified ORDER BY ASC(?date_modified)",
     "descriptor": {
       "en": "Occupations",
       "pt-br": "Ocupações"
@@ -56,7 +56,7 @@
     "gender_marker": "a"
   },
   "pessoas_conhecidas": {
-    "query": "SELECT DISTINCT ?item_qid ?item_label (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. ?retrata wdt:P31 wd:Q5. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label",
+    "query": "SELECT DISTINCT ?item_qid ?item_label ?date_modified (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. ?retrata wdt:P31 wd:Q5. ?item schema:dateModified ?date_modified. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label ?date_modified ORDER BY ASC(?date_modified)",
     "descriptor": {
       "en": "Known people",
       "pt-br": "Pessoas conhecidas"
@@ -64,7 +64,7 @@
     "gender_marker": "a"
   },
   "tudo": {
-    "query": "SELECT DISTINCT ?item_qid ?item_label (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. ?retrata wdt:P279* wd:Q795052. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label",
+    "query": "SELECT DISTINCT ?item_qid ?item_label ?date_modified (SAMPLE(?imagem) AS ?imagem) WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language 'LANGUAGE, pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?retrata rdfs:label  ?retrata_label.} ?item wdt:P195 wd:Q56677470. ?item wdt:P18 ?imagem_. ?item wdt:P180 ?retrata. ?retrata wdt:P279* wd:Q795052. ?item schema:dateModified ?date_modified. BIND(SUBSTR(STR(?item),32) AS ?item_qid) BIND(REPLACE(wikibase:decodeUri(STR(?imagem_)), 'http://commons.wikimedia.org/wiki/Special:FilePath/', '') as ?imagem) } GROUP BY ?item_qid ?item_label ?date_modified ORDER BY ASC(?date_modified)",
     "descriptor": {
       "en": "varied terms",
       "pt-br": "termos variados"

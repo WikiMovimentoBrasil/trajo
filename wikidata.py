@@ -69,17 +69,17 @@ def format_dates(time, lang="pt-br"):
     year, month, day, precision = list(map(int, re.findall(r'\d+', time)))
     if precision == 7:
         if lang == "en":
-            date = "%dth century" % int(year/1000+1)
+            date = "%dth century" % (int(year/1000+1))
         else:
             if year % 1000 == 0:
-                date = "Século %s" % roman.toRoman(year/100)
+                date = "Século %s" % (roman.toRoman(year/100))
             else:
-                date = "Século %s" % roman.toRoman(math.floor(year / 100) + 1)
+                date = "Século %s" % (roman.toRoman(math.floor(year / 100) + 1))
     elif precision == 8:
         if lang == "en":
-            date = "%ds" % int(year/10)*10
+            date = "%ds" % (int(year/10)*10)
         else:
-            date = "Década de %d" % int(year/10)*10
+            date = "Década de %d" % (int(year/10)*10)
     elif precision == 9:
         date = "%d" % year
     elif precision == 10:
