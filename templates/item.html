@@ -99,7 +99,7 @@
                                         {{ _("Veste") }}
                                     </th>
                                     <td>
-                                        {% if username %}<a title="{{ _('Adicionar vestimenta') }}"><button type="button" class="btn btn-primary" data-toggle="modal" data-qid="{{ metadata.obra_qid[0] }}" data-stat-id="{{depicted_entity.retrata_stat_id[0]}}" data-tipo="P3828" data-target="#addModal" style="font-size:125%; background-color: #008000; border-color: #008000; margin: 3px; width:100%">{{ _("Adicionar") }}</button></a>{% endif %}
+                                        {% if username %}<a title="{{ _('Adicionar vestimenta') }}"><button type="button" class="btn btn-primary" data-toggle="modal" data-qid="{{ metadata.obra_qid[0] }}" data-stat-id="{{depicted_entity.retrata_stat_id[0]}}" data-tipo="P3828" data-target="#addP3828Modal" style="font-size:125%; background-color: #008000; border-color: #008000; margin: 3px; width:100%">{{ _("Adicionar") }}</button></a>{% endif %}
                                         {% if 'veste' in depicted_entity %}
                                             {% for vestimenta in depicted_entity.veste %}
                                                 {% set veste_elem_parts = vestimenta.split('@') %}
@@ -129,7 +129,7 @@
                                         {{ _("Usa") }}
                                     </th>
                                     <td>
-                                        {% if username %}<a title="{{ _('Adicionar objetos usados') }}"><button type="button" class="btn btn-primary" data-toggle="modal" data-qid="{{ metadata.obra_qid[0] }}" data-tipo="P2283" data-stat-id="{{ depicted_entity.retrata_stat_id[0] }}" data-target="#addModal" style="font-size:125%; background-color: #008000; border-color: #008000; margin: 3px; width:100%" >{{ _("Adicionar") }}</button></a>{% endif %}
+                                        {% if username %}<a title="{{ _('Adicionar objetos usados') }}"><button type="button" class="btn btn-primary" data-toggle="modal" data-qid="{{ metadata.obra_qid[0] }}" data-tipo="P2283" data-stat-id="{{ depicted_entity.retrata_stat_id[0] }}" data-target="#addP2833Modal" style="font-size:125%; background-color: #008000; border-color: #008000; margin: 3px; width:100%" >{{ _("Adicionar") }}</button></a>{% endif %}
                                         {% if 'usa' in depicted_entity %}
                                             {% for uso in depicted_entity.usa %}
                                                 {% set usa_elem_parts = uso.split('@') %}
@@ -186,7 +186,7 @@
                 </div>
             </div>
         </div>
-        <div class="modal" id="addModal">
+        <div class="modal" id="addP2283Modal">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -203,6 +203,29 @@
                         </form>
                     </div>
                     <div class="modal-footer" id="secondModal">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="font-size:125%; ">{{ _("Cancelar") }}</button>
+                        <button type="button" id="addqualifier" class="btn btn-primary" style="font-size:125%; background-color: #0068a3">{{ _("Adicionar declaração") }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="addP3828Modal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">{{ _("Declaração") }}</h3>
+                        <button type="button" class="close" data-dismiss="modal" style="font-size:125%; ">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="search_field" class="col-form-label" style="font-size: 125%">{{ _("Adicionar declaração:") }}</label>
+                        <input type="text" class="form-control" placeholder="{{ _('Pesquise no Wikidata') }}" id="search_field" style="font-size: 125%">
+                        <br>
+                        <span id="select_instruction" style="font-size: 125%">{{ _("Selecione uma opção:") }}</span><br>
+                        <form id="search_results">
+
+                        </form>
+                    </div>
+                    <div class="modal-footer" id="secondModalp3828">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal" style="font-size:125%; ">{{ _("Cancelar") }}</button>
                         <button type="button" id="addqualifier" class="btn btn-primary" style="font-size:125%; background-color: #0068a3">{{ _("Adicionar declaração") }}</button>
                     </div>
@@ -239,7 +262,7 @@
             $(this).find(".modal-footer #gotostatement").attr('href',stat_id);
         });
 
-        $('#addModal').on('show.bs.modal', function (event) {
+        $('#addP2283Modal').on('show.bs.modal', function (event) {
             var stat_qid = $(event.relatedTarget).data('stat-id');
             var qid_ = $(event.relatedTarget).data('qid');
             var tipo = $(event.relatedTarget).data('tipo');
@@ -249,10 +272,27 @@
             $(this).find("#secondModal #addqualifier").attr('data-tipo',tipo);
         })
 
-        $('#addModal').on('hidden.bs.modal', function () {
+        $('#addP2283Modal').on('hidden.bs.modal', function () {
             $(this).find("#secondModal #addqualifier").attr('data-stat-id',"");
             $(this).find("#secondModal #addqualifier").attr('data-qid',"");
             $(this).find("#secondModal #addqualifier").attr('data-tipo',"");
+            $("#search_results").empty();
+        })
+
+        $('#addP3828').on('show.bs.modal', function (event) {
+            var stat_qid = $(event.relatedTarget).data('stat-id');
+            var qid_ = $(event.relatedTarget).data('qid');
+            var tipo = $(event.relatedTarget).data('tipo');
+
+            $(this).find("#secondModalp3828 #addqualifier").attr('data-stat-id',stat_qid);
+            $(this).find("#secondModalp3828 #addqualifier").attr('data-qid',qid_);
+            $(this).find("#secondModalp3828 #addqualifier").attr('data-tipo',tipo);
+        })
+
+        $('#addP3828').on('hidden.bs.modal', function () {
+            $(this).find("#secondModalp3828 #addqualifier").attr('data-stat-id',"");
+            $(this).find("#secondModalp3828 #addqualifier").attr('data-qid',"");
+            $(this).find("#secondModalp3828 #addqualifier").attr('data-tipo',"");
             $("#search_results").empty();
         })
 
@@ -276,7 +316,8 @@
 
                 success: function() {
                     alert("Declaração inserida com sucesso!");
-                    $('#addModal').modal('hide');
+                    $('#addP2283Modal').modal('hide');
+                    $('#addP3828Modal').modal('hide');
                     },
                 error: function() {
                     alert("Ocorreu algum erro!");
