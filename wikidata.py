@@ -128,7 +128,9 @@ def post_search_entity(term, lang="pt-br"):
 
 
 def filter_by_tesauros(qids, lang="pt-br"):
-    data = query_wikidata("SELECT DISTINCT ?item_qid ?item_label ?item_descr WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language '"+lang+",pt-br,pt,en,es,fr,de'. ?item rdfs:label ?item_label. ?item schema:description ?item_descr.} VALUES ?item {"+qids+"} VALUES ?propriedade {wdt:P8514 wdt:P3832 wdt:P1014 wdt:P1256 wdt:P7749} ?item ?propriedade []. BIND(SUBSTR(STR(?item),32) AS ?item_qid) }")
+    if lang == "pt-br" or lang == "pt":
+        lang = "pt-br,pt"
+    data = query_wikidata("SELECT DISTINCT ?item_qid ?item_label ?item_descr WHERE { SERVICE wikibase:label {bd:serviceParam wikibase:language '"+lang+"'. ?item rdfs:label ?item_label. ?item schema:description ?item_descr.} VALUES ?item {"+qids+"} VALUES ?propriedade {wdt:P8514 wdt:P3832 wdt:P1014 wdt:P1256 wdt:P7749} ?item ?propriedade []. BIND(SUBSTR(STR(?item),32) AS ?item_qid) }")
     results = data["results"]["bindings"]
     query = []
     for item in results:
