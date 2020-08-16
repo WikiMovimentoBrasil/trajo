@@ -13,7 +13,8 @@
     <div class="w3-container w3-quarter"></div>
     <div class="w3-container w3-half">
         <video style="width: 100%; height: auto" controls>
-            <source src="{{ url_for('static',filename='Trajo.mp4') }}" type="video/mp4">
+            <source src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Trajo.webm" type="video/mp4">
+            <track src="{{ url_for('static', filename='subtitles_tutorial_en.vtt') }}" kind="subtitles" srclang="en" label="English" />
         </video>
     </div>
 </div>
