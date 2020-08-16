@@ -149,7 +149,7 @@ def colecao(type):
     try:
         selected_query = all_queries[type]["query"]
         gender_marker = all_queries[type]["gender_marker"]
-        if get_locale == "en":
+        if lang == "en":
             descriptor = all_queries[type]["descriptor"]["en"]
         else:
             descriptor = all_queries[type]["descriptor"]["pt-br"]

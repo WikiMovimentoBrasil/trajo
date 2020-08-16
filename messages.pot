@@ -1,0 +1,303 @@
+# Translations template for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-08-16 00:56-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: templates/base.html:17 templates/colecao.html:27 templates/inicio.html:9
+msgid "Página inicial"
+msgstr ""
+
+#: templates/base.html:17 templates/base.html:34 templates/topnavbar.html:2
+msgid "Trajo"
+msgstr ""
+
+#: templates/base.html:42
+msgid "Projeto Novo Museu do Ipiranga"
+msgstr ""
+
+#: templates/base.html:43
+#, python-format
+msgid ""
+"<i>Trajo</i> é um aplicativo gamificado desenvolvido no contexto do "
+"<i><b>%(projeto)s</b></i>, organizado pelo <b>Grupo de Usuários Wiki "
+"Movimento Brasil</b> e o <b>Museu do Ipiranga</b>, em parceria com a "
+"<b>Fundação Banco do Brasil</b> e com realização da <b>Universidade de "
+"São Paulo</b> e a <b>Fundação de Apoio à Universidade de São Paulo</b>."
+msgstr ""
+
+#: templates/colecao.html:24
+#, python-format
+msgid ""
+"Esta seleção de obras do Museu do Ipiranga apresenta descritores que "
+"identificam <i>%(p180)s</i> retratad%(p21)ss."
+msgstr ""
+
+#: templates/colecao.html:28
+#, python-format
+msgid ""
+"São %(quant)s obras selecionadas. Para navegar por outras seleções de "
+"obras, volte à %(home)s."
+msgstr ""
+
+#: templates/inicio.html:15
+msgid ""
+"Descreva as vestimentas e os objetos usados pelas<br>pessoas retratadas "
+"nas obras do Museu do Ipiranga"
+msgstr ""
+
+#: templates/inicio.html:21 templates/inicio.html:29
+msgid "Homens"
+msgstr ""
+
+#: templates/inicio.html:32 templates/inicio.html:40
+msgid "Mulheres"
+msgstr ""
+
+#: templates/inicio.html:43 templates/inicio.html:51
+msgid "Jovens"
+msgstr ""
+
+#: templates/inicio.html:54 templates/inicio.html:62
+msgid "Idosos"
+msgstr ""
+
+#: templates/inicio.html:65 templates/inicio.html:73
+msgid "Nacionalidades"
+msgstr ""
+
+#: templates/inicio.html:76 templates/inicio.html:84
+msgid "Etnias"
+msgstr ""
+
+#: templates/inicio.html:87 templates/inicio.html:95
+msgid "Ocupações"
+msgstr ""
+
+#: templates/inicio.html:98 templates/inicio.html:106
+msgid "Pessoas conhecidas"
+msgstr ""
+
+#: templates/item.html:21
+msgid "Veja essa imagem no Wikimedia Commons"
+msgstr ""
+
+#: templates/item.html:27
+msgid "Obra"
+msgstr ""
+
+#: templates/item.html:32
+msgid "Instância de"
+msgstr ""
+
+#: templates/item.html:43
+msgid "Data"
+msgstr ""
+
+#: templates/item.html:51
+msgid "Criador(a)"
+msgstr ""
+
+#: templates/item.html:62
+msgid "Material"
+msgstr ""
+
+#: templates/item.html:73
+msgid "Encomendador"
+msgstr ""
+
+#: templates/item.html:84
+msgid "Versão audível"
+msgstr ""
+
+#: templates/item.html:88
+msgid "Seu navegador não suporta este elemento de áudio"
+msgstr ""
+
+#: templates/item.html:97
+msgid "Adicione elementos descritivos às pessoas retratadas"
+msgstr ""
+
+#: templates/item.html:109
+msgid "Veste"
+msgstr ""
+
+#: templates/item.html:112
+msgid "Adicionar vestimenta"
+msgstr ""
+
+#: templates/item.html:112 templates/item.html:142
+msgid "Adicionar"
+msgstr ""
+
+#: templates/item.html:139
+msgid "Usa"
+msgstr ""
+
+#: templates/item.html:142
+msgid "Adicionar objetos usados"
+msgstr ""
+
+#: templates/item.html:179 templates/item.html:183 templates/item.html:203
+msgid "Declaração"
+msgstr ""
+
+#: templates/item.html:183
+msgid "Descrição da declaração"
+msgstr ""
+
+#: templates/item.html:185
+msgid "Qualificador"
+msgstr ""
+
+#: templates/item.html:185
+msgid "Descrição do qualificador"
+msgstr ""
+
+#: templates/item.html:189 templates/item.html:216
+msgid "Cancelar"
+msgstr ""
+
+#: templates/item.html:192
+msgid "Ir para declaração"
+msgstr ""
+
+#: templates/item.html:207
+msgid "Adicionar declaração:"
+msgstr ""
+
+#: templates/item.html:208
+msgid "Pesquise no Wikidata"
+msgstr ""
+
+#: templates/item.html:210
+msgid "Selecione uma opção:"
+msgstr ""
+
+#: templates/item.html:217
+msgid "Adicionar declaração"
+msgstr ""
+
+#: templates/item.html:320
+msgid "Selecione um elemento"
+msgstr ""
+
+#: templates/sobre.html:9 templates/topnavbar.html:3
+msgid "Sobre"
+msgstr ""
+
+#: templates/sobre.html:16
+msgid ""
+"<b>Trajo</b> é um aplicativo gamificado colaborativo. O propósito é "
+"contribuir com a descrição das obras no acervo do Museu Paulista da "
+"Universidade de São Paulo."
+msgstr ""
+
+#: templates/sobre.html:17
+msgid ""
+"Está conectado à base de dados colaborativa Wikidata, um projeto irmão da"
+" Wikipédia. Toda contribuição que é feita no <b>Trajo</b> é "
+"automaticamente transmitida para o respectivo item da obra editada no "
+"Wikidata."
+msgstr ""
+
+#: templates/sobre.html:18
+msgid ""
+"As edições são então transpostas para uma série de páginas na internet. "
+"Isso inclui livros colaborativos, repositórios de imagens e em alguns "
+"casos a própria Wikipédia."
+msgstr ""
+
+#: templates/sobre.html:19
+msgid ""
+"O nome do aplicativo é uma brincadeira com o verbo <i>trajar</i>, fazendo"
+" referência ao foco do aplicativo em descrever vestimentas e objetos "
+"usados pelas pessoas retratadas no acervo do Museu Paulista."
+msgstr ""
+
+#: templates/sobre.html:20
+msgid "Participe e divulgue!"
+msgstr ""
+
+#: templates/sobre.html:24
+msgid "Flask"
+msgstr ""
+
+#: templates/sobre.html:25
+msgid "GitHub"
+msgstr ""
+
+#: templates/sobre.html:26
+msgid "GPL v3.0"
+msgstr ""
+
+#: templates/sobre.html:27
+msgid "CC-BY-SA 4.0 Internacional"
+msgstr ""
+
+#: templates/sobre.html:28
+msgid "CC0"
+msgstr ""
+
+#: templates/sobre.html:30
+#, python-format
+msgid "Este aplicativo foi desenvolvido em %(flask)s."
+msgstr ""
+
+#: templates/sobre.html:31
+#, python-format
+msgid "O código-fonte está disponível no %(github)s."
+msgstr ""
+
+#: templates/sobre.html:32
+#, python-format
+msgid "Licença do cógido-fonte: %(license_code)s."
+msgstr ""
+
+#: templates/sobre.html:33
+#, python-format
+msgid "Licença de textos: %(license_text)s."
+msgstr ""
+
+#: templates/sobre.html:34
+#, python-format
+msgid "Licença dos objetos retornados do Wikidata: %(license_wikidata)s."
+msgstr ""
+
+#: templates/sobre.html:35
+msgid "Versão 1.0."
+msgstr ""
+
+#: templates/topnavbar.html:4
+msgid "Como jogar?"
+msgstr ""
+
+#: templates/topnavbar.html:14
+msgid "Autenticar-se"
+msgstr ""
+
+#: templates/topnavbar.html:16
+msgid "Menu"
+msgstr ""
+
+#: templates/tutorial.html:9
+msgid "Tutorial"
+msgstr ""
+
+#: templates/tutorial.html:15
+msgid "Em construção"
+msgstr ""
+

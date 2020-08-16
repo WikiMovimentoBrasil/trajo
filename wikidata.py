@@ -53,8 +53,10 @@ def query_depicts_metadata(query, qid):
         get_values_lists(depicted_entity, sep=";%;")
         if 'retrata_stat_id' in depicted_entity:
             depicted_entity['retrata_stat_id'][0] = "https://www.wikidata.org/wiki/"+qid+"#"+depicted_entity['retrata_stat_id'][0].replace('-', '$', 1)
-        if "retrata_descr" not in result:
+        if "retrata_descr" not in depicted_entity:
             depicted_entity["retrata_descr"] = ""
+        if "retrata_label" not in depicted_entity:
+            depicted_entity["retrata_label"] = ""
     return result
 
 
