@@ -86,11 +86,7 @@ def oauth_callback():
 def get_locale():
     if request.args.get('lang'):
         session['lang'] = request.args.get('lang')
-
-    lang = session.get('lang', 'pt-br')
-    if lang == 'pt' or lang == 'pt-br':
-        session['lang'] = 'pt-br'
-    return session.get('lang', 'pt-br')
+    return session.get('lang', 'pt')
 
 
 # Função para mudar a língua de exibição do conteúdo
@@ -101,6 +97,13 @@ def set_locale():
 
     session["lang"] = lang
     return redirect(next_page)
+
+
+def pt_to_ptbr(lang):
+    if lang == "pt" or lang == "pt-br":
+        return "pt-br,pt"
+    else:
+        return lang
 
 ##############################################################
 # PÁGINAS
@@ -168,10 +171,10 @@ def item(qid):
     with open(os.path.join(app.static_folder, 'queries.json')) as category_queries:
         all_queries = json.load(category_queries)
 
-    lang = get_locale()
+    lang = pt_to_ptbr(get_locale())
     metadata_query = all_queries["Metadados"]["query"].replace("LANGUAGE", lang).replace("QIDDAOBRA", qid)
     depicts_query = all_queries["Retratas"]["query"].replace("LANGUAGE", lang).replace("QIDDAOBRA", qid)
-    work_metadata = query_metadata_of_work(metadata_query, lang=get_locale)
+    work_metadata = query_metadata_of_work(metadata_query, lang=lang)
     work_depicts = query_depicts_metadata(depicts_query, qid)
 
     return render_template('item.html',

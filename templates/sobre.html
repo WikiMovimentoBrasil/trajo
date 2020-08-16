@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
+{% block navbar %}
+    {% with lang=lang, username=username %}
+        {% include 'topnavbar.html' %}
+    {% endwith %}
+{% endblock %}
+
 {% block title %}{{ _("Sobre") }}{% endblock %}
 
 {% block content %}

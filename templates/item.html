@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
+{% block navbar %}
+    {% with lang=lang, username=username %}
+        {% include 'topnavbar.html' %}
+    {% endwith %}
+{% endblock %}
+
 {% block title %}{% if metadata.obra_label %}{{ metadata.obra_label[0] }}{% else %}{{ metadata.obra_qid[0] }}{% endif %}{% endblock %}
 
 {% block scripts %}
@@ -317,7 +323,7 @@
         };
 
         $(document).ready(function(){
-            $('img')
+            $('#image_item')
                 .wrap('<span style="display:inline-block"></span>')
                 .css('display', 'block')
                 .parent()

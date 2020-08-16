@@ -5,7 +5,7 @@
     {% if lang != 'en' %}
         <a class="right" tabindex="0" href="{{url_for('set_locale', return_to=request.script_root + request.full_path, lang='en')}}"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Flag-us.svg" width="25px" alt="en"></a>
     {% endif %}
-    {% if lang != 'pt' and lang != 'pt-BR' %}
+    {% if lang != 'pt' and lang != 'pt-br' and lang != 'pt_BR' %}
         <a class="right" tabindex="0" href="{{url_for('set_locale', return_to=request.script_root + request.full_path, lang='pt')}}"><img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Flag-br.svg" width="25px" alt="pt"></a>
     {% endif %}
     {% if username %}

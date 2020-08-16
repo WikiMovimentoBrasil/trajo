@@ -53,6 +53,8 @@ def query_depicts_metadata(query, qid):
         get_values_lists(depicted_entity, sep=";%;")
         if 'retrata_stat_id' in depicted_entity:
             depicted_entity['retrata_stat_id'][0] = "https://www.wikidata.org/wiki/"+qid+"#"+depicted_entity['retrata_stat_id'][0].replace('-', '$', 1)
+        if "retrata_descr" not in result:
+            depicted_entity["retrata_descr"] = ""
     return result
 
 
@@ -69,7 +71,7 @@ def format_dates(time, lang="pt-br"):
     year, month, day, precision = list(map(int, re.findall(r'\d+', time)))
     if precision == 7:
         if lang == "en":
-            date = "%dth century" % (int(year/1000+1))
+            date = "%dth century" % (int(year/100)+1)
         else:
             if year % 1000 == 0:
                 date = "Século %s" % (roman.toRoman(year/100))
