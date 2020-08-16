@@ -87,7 +87,10 @@ def get_locale():
     if request.args.get('lang'):
         session['lang'] = request.args.get('lang')
 
-    return session.get('lang', 'pt')
+    lang = session.get('lang', 'pt-br')
+    if lang == 'pt' or lang == 'pt-br':
+        session['lang'] = 'pt-br'
+    return session.get('lang', 'pt-br')
 
 
 # Função para mudar a língua de exibição do conteúdo
@@ -165,8 +168,9 @@ def item(qid):
     with open(os.path.join(app.static_folder, 'queries.json')) as category_queries:
         all_queries = json.load(category_queries)
 
-    metadata_query = all_queries["Metadados"]["query"].replace("LANGUAGE", get_locale()).replace("QIDDAOBRA", qid)
-    depicts_query = all_queries["Retratas"]["query"].replace("LANGUAGE", get_locale()).replace("QIDDAOBRA", qid)
+    lang = get_locale()
+    metadata_query = all_queries["Metadados"]["query"].replace("LANGUAGE", lang).replace("QIDDAOBRA", qid)
+    depicts_query = all_queries["Retratas"]["query"].replace("LANGUAGE", lang).replace("QIDDAOBRA", qid)
     work_metadata = query_metadata_of_work(metadata_query, lang=get_locale)
     work_depicts = query_depicts_metadata(depicts_query, qid)
 

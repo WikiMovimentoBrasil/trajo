@@ -2,6 +2,10 @@
 
 {% block title %}{% if metadata.obra_label %}{{ metadata.obra_label[0] }}{% else %}{{ metadata.obra_qid[0] }}{% endif %}{% endblock %}
 
+{% block scripts %}
+    <script src="{{ url_for('static', filename= 'jquery.zoom.js') }}"></script>
+{% endblock %}
+
 {% block content %}
     <div class="w3-row">
         <div id="image" class="w3-container w3-half">
@@ -311,5 +315,13 @@
                 }
             });
         };
+
+        $(document).ready(function(){
+            $('img')
+                .wrap('<span style="display:inline-block"></span>')
+                .css('display', 'block')
+                .parent()
+                .zoom();
+        });
     </script>
 {% endblock %}
