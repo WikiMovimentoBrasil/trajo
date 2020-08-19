@@ -38,10 +38,11 @@ def query_by_type(query, lang="pt-br"):
 
 def query_metadata_of_work(query, lang="pt-br"):
     data = query_wikidata(query)
-    result = data["results"]["bindings"][0]
-    format_dates_in_result(result, lang)
-    get_values_lists(result)
-    if result == [{}]:
+    if "results" in data and "bindings" in data["results"]:
+        result = data["results"]["bindings"][0]
+        format_dates_in_result(result, lang)
+        get_values_lists(result)
+    if not result or result == [{}]:
         result = ""
     return result
 

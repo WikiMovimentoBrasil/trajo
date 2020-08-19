@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-08-16 00:56-0300\n"
+"POT-Creation-Date: 2020-08-19 18:34-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,6 +51,18 @@ msgstr ""
 msgid ""
 "São %(quant)s obras selecionadas. Para navegar por outras seleções de "
 "obras, volte à %(home)s."
+msgstr ""
+
+#: templates/error.html:3 templates/error.html:8
+msgid "Algo deu errado!"
+msgstr ""
+
+#: templates/error.html:15
+msgid "REPORTAR ERRO"
+msgstr ""
+
+#: templates/error.html:22
+msgid "VOLTAR À PÁGINA INICIAL"
 msgstr ""
 
 #: templates/inicio.html:15
@@ -180,7 +192,7 @@ msgid "Adicionar declaração:"
 msgstr ""
 
 #: templates/item.html:208
-msgid "Pesquise no Wikidata"
+msgid "Pesquise"
 msgstr ""
 
 #: templates/item.html:210
@@ -295,9 +307,5 @@ msgstr ""
 
 #: templates/tutorial.html:9
 msgid "Tutorial"
-msgstr ""
-
-#: templates/tutorial.html:15
-msgid "Em construção"
 msgstr ""
 

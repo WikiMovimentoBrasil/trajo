@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-08-16 00:56-0300\n"
+"POT-Creation-Date: 2020-08-19 18:34-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -58,6 +58,18 @@ msgid ""
 msgstr ""
 "There are %(quant)s works selected. To browse other selections of works, "
 "return to the %(home)s."
+
+#: templates/error.html:3 templates/error.html:8
+msgid "Algo deu errado!"
+msgstr "Something went wrong!"
+
+#: templates/error.html:15
+msgid "REPORTAR ERRO"
+msgstr "REPORT ERROR"
+
+#: templates/error.html:22
+msgid "VOLTAR À PÁGINA INICIAL"
+msgstr "GO TO HOMEPAGE"
 
 #: templates/inicio.html:15
 msgid ""
@@ -188,8 +200,8 @@ msgid "Adicionar declaração:"
 msgstr "Add statement:"
 
 #: templates/item.html:208
-msgid "Pesquise no Wikidata"
-msgstr ""
+msgid "Pesquise"
+msgstr "Search"
 
 #: templates/item.html:210
 msgid "Selecione uma opção:"
@@ -318,11 +330,3 @@ msgstr "Menu"
 #: templates/tutorial.html:9
 msgid "Tutorial"
 msgstr "Tutorial"
-
-#: templates/tutorial.html:15
-msgid "Em construção"
-msgstr "Building"
-
-#~ msgid "Pesquise"
-#~ msgstr "Search"
-

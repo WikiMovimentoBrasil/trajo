@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{{_("Algo deu errado!")}}{% endblock %}
+
+{% block content %}
+<div class="w3-row" style="text-align:center">
+    <div class="w3-row" style="text-align:center; font-family: 'Josefin Sans', sans-serif; font-size:150%">
+        <p style="text-align:center"><b>{{_("Algo deu errado!")}}</b></p>
+    </div>
+    <br>
+    <div class="w3-container">
+        <div class="w3-row w3-half" style="text-align:center; font-family: 'Josefin Sans', sans-serif; font-size:150%">
+            <a tabindex="0" href="https://github.com/WikiMovimentoBrasil/trajo/issues" target="_blank">
+                <button type="button" class="button" id="report" style="background-color:#0068a3;width:90%;margin:0;font-size:100%;">
+                    {{_("REPORTAR ERRO")}}
+                </button>
+            </a>
+        </div>
+        <div class="w3-row w3-half" style="text-align:center; font-family: 'Josefin Sans', sans-serif; font-size:150%">
+            <a tabindex="0" href="{{url_for('inicio')}}">
+                <button type="button" class="button" id="goback" style="background-color:#0068a3;width:90%;margin:0;font-size:100%;">
+                    {{_("VOLTAR À PÁGINA INICIAL")}}
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
