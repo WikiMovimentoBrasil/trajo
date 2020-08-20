@@ -139,7 +139,19 @@ def filter_by_tesauros(qids, lang="pt-br"):
     results = data["results"]["bindings"]
     query = []
     for item in results:
-        query.append({"qid": item["item_qid"]["value"],
-                      "label": item["item_label"]["value"],
-                      "descr": item["item_descr"]["value"]})
+        if "item_qid" in item:
+            qid = item["item_qid"]["value"]
+        else:
+            qid = ""
+        if "item_label" in item:
+            label = item["item_label"]["value"]
+        else:
+            label = ""
+        if "item_descr" in item:
+            descr = item["item_descr"]["value"]
+        else:
+            descr = ""
+        query.append({"qid": qid,
+                      "label": label,
+                      "descr": descr})
     return query
