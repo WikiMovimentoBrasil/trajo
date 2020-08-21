@@ -109,7 +109,7 @@
                                         {{ _("Veste") }}
                                     </th>
                                     <td>
-                                        {% if 1 %}<a title="{{ _('Adicionar vestimenta') }}"><button type="button" class="btn btn-primary" data-toggle="modal" data-qid="{{ metadata.obra_qid[0] }}" data-stat-id="{{depicted_entity.retrata_stat_id[0]}}" data-tipo="P3828" data-target="#addModal" style="font-size:125%; background-color: #008000; border-color: #008000; margin: 3px; width:100%">{{ _("Adicionar") }}</button></a>{% endif %}
+                                        {% if username %}<a title="{{ _('Adicionar vestimenta') }}"><button type="button" class="btn btn-primary" data-toggle="modal" data-qid="{{ metadata.obra_qid[0] }}" data-stat-id="{{depicted_entity.retrata_stat_id[0]}}" data-tipo="P3828" data-target="#addModal" style="font-size:125%; background-color: #008000; border-color: #008000; margin: 3px; width:100%">{{ _("Adicionar") }}</button></a>{% endif %}
                                         {% if 'veste' in depicted_entity %}
                                             {% for vestimenta in depicted_entity.veste %}
                                                 {% set veste_elem_parts = vestimenta.split('@') %}
@@ -139,7 +139,7 @@
                                         {{ _("Usa") }}
                                     </th>
                                     <td>
-                                        {% if 1 %}<a title="{{ _('Adicionar objetos usados') }}"><button type="button" class="btn btn-primary" data-toggle="modal" data-qid="{{ metadata.obra_qid[0] }}" data-tipo="P2283" data-stat-id="{{ depicted_entity.retrata_stat_id[0] }}" data-target="#addModal" style="font-size:125%; background-color: #008000; border-color: #008000; margin: 3px; width:100%" >{{ _("Adicionar") }}</button></a>{% endif %}
+                                        {% if username %}<a title="{{ _('Adicionar objetos usados') }}"><button type="button" class="btn btn-primary" data-toggle="modal" data-qid="{{ metadata.obra_qid[0] }}" data-tipo="P2283" data-stat-id="{{ depicted_entity.retrata_stat_id[0] }}" data-target="#addModal" style="font-size:125%; background-color: #008000; border-color: #008000; margin: 3px; width:100%" >{{ _("Adicionar") }}</button></a>{% endif %}
                                         {% if 'usa' in depicted_entity %}
                                             {% for uso in depicted_entity.usa %}
                                                 {% set usa_elem_parts = uso.split('@') %}

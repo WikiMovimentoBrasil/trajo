@@ -214,7 +214,7 @@ def item(qid):
                            metadata=work_metadata,
                            depicts_metadata=work_depicts,
                            username=username,
-                           lang=get_locale())
+                           lang=lang)
 
 
 ##############################################################
