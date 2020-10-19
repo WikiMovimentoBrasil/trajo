@@ -5,6 +5,13 @@ import re
 from flask import current_app, session
 from requests_oauthlib import OAuth1Session
 
+metadados = {"P18": "imagem",
+             "P989": "audio",
+             "P31": "instancia_qid",
+             "P170": "criador_qid",
+             "P571": "data",
+             "P186": "material_qid",
+             "P88": "encomendador_qid"}
 
 ##############################################################
 # QUERIES
@@ -42,6 +49,8 @@ def query_metadata_of_work(query, lang="pt-br"):
         result = data["results"]["bindings"][0]
         format_dates_in_result(result, lang)
         get_values_lists(result)
+        if "obra" in result and len(result["obra"]) > 0:
+            result["obra_qid"] = [result["obra"][0].replace("http://www.wikidata.org/entity/", "")]
     if not result or result == [{}]:
         result = ""
     return result
@@ -102,6 +111,35 @@ def format_dates(time, lang="pt-br"):
 def get_values_lists(result, sep=";"):
     for metadata_key, metadata_dict in result.items():
         result[metadata_key] = list(filter(None, metadata_dict["value"].split(sep)))
+
+
+def api_get_items_with_labels(item, lang="pt-br"):
+    url = 'https://www.wikidata.org/w/api.php'
+    params = {
+        'action': 'wbgetentities',
+        'ids': item,
+        'props': "claims",
+        'format': 'json',
+        'uselang': lang,
+    }
+    result = requests.get(url=url, params=params, headers={'User-agent': 'Trajo 1.0'})
+    new_result = {}
+    data = result.json()
+    properties = data["entities"][item]["claims"]
+    if "entities" in data and item in data["entities"] and "claims" in data["entities"][item]:
+        for property in properties:
+            if property in metadados:
+                key = metadados[property]
+                values = []
+                for value in data["entities"][item]["claims"][property]:
+                    values.append(value["mainsnak"]["datavalue"]["value"])
+                    if value["rank"] == "preferred":
+                        new_result[key] = value["mainsnak"]["datavalue"]["value"]
+                        break
+                if key not in new_result:
+                    new_result[key] = values
+
+    return new_result
 
 
 def api_post_request(params):
