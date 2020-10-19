@@ -22,6 +22,11 @@
             </a>
         </div>
         <div id="metadata" class="w3-container w3-half">
+            {% if not username %}
+                <h2>
+                    {{ _("Faça a sua autenticação clicando no botão 'Autenticar-se' no canto superior direito") }}
+                </h2>
+            {% endif %}
             <table class="table table-responsive table-striped" style="overflow: hidden; font-size: 125%; width: 100%; table-layout: fixed; overflow-wrap: break-word;">
                 <tr>
                     <th>{{ _("Obra") }}</th>

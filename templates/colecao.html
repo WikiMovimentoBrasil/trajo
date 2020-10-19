@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% block banner %}
-    <h1 style="font-family: Satisfy;font-size: 400%;text-align: center;color: #0068a3; padding:30px">
+    <h1 style="font-family: Satisfy;font-size: 400%;text-align: center;color: #0068a3; padding-top:60px;padding-bottom:30px">
         Trajo
     </h1>
 {% endblock %}
@@ -37,7 +37,6 @@
     $('#pagination-container').pagination({
         dataSource: {{ collection|tojson }},
         pageSize: 20,
-        pageRange: null,
         callback: function(data, pagination) {
             var html = simpleTemplating(data);
             $("#image_container").html(html);

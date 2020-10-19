@@ -9,15 +9,15 @@
 {% block title %}{{ _("Página inicial") }}{% endblock %}
 
 {% block banner %}
-    <h1 style="font-family: Satisfy;font-size: 400%;text-align: center;color: #0068a3; padding:30px">
+    <h1 style="font-family: Satisfy;font-size: 400%;text-align: center;color: #0068a3; padding-top:60px;padding-bottom:30px">
         Trajo
     </h1>
     <h2 style="text-align:center; padding:30px;">{{ _("Descreva as vestimentas e os objetos usados pelas<br>pessoas retratadas nas obras do Museu do Ipiranga") }}</h2>
 {% endblock %}
 
 {% block content %}
-    <div class="w3-container w3-third"></div>
-    <div class="w3-container w3-third">
+    <div class="w3-container w3-quarter"></div>
+    <div class="w3-container w3-quarter">
         <a href="{{ url_for('colecao', type='homens') }}" title="{{ _('Homens') }}">
             <button type="button"
                     class="btn btn-primary"
@@ -62,6 +62,8 @@
                 {{ _('Idosos') }}
             </button>
         </a>
+    </div>
+    <div class="w3-container w3-quarter">
         <a href="{{ url_for('colecao', type='nacionalidades') }}" title="{{ _('Nacionalidades') }}">
             <button type="button"
                     class="btn btn-primary"
