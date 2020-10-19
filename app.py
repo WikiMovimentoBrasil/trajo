@@ -6,7 +6,7 @@ from flask import Flask, render_template, request, session, redirect, url_for, j
 from flask_babel import Babel
 from oauth_wikidata import get_username, get_token
 from wikidata import query_by_type, query_metadata_of_work, query_depicts_metadata,\
-    api_post_request, post_search_entity, filter_by_tesauros
+    api_post_request, post_search_entity, filter_by_tesauros, query_quantidade
 
 __dir__ = os.path.dirname(__file__)
 app = Flask(__name__)
@@ -157,9 +157,15 @@ def inicio():
 @app.route('/sobre')
 def sobre():
     username = get_username()
+    lang = pt_to_ptbr(get_locale())
+    with open(os.path.join(app.static_folder, 'queries.json'), encoding="utf-8") as category_queries:
+        all_queries = json.load(category_queries)
+
+    quantidade = query_quantidade(all_queries["Quantidade_de_obras"]["query"], lang=lang)
     return render_template('sobre.html',
                            username=username,
-                           lang=get_locale())
+                           lang=get_locale(),
+                           number_works=quantidade)
 
 
 # Página com tutorial de como contribuir com o jogo

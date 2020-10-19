@@ -43,6 +43,15 @@ def query_by_type(query, lang="pt-br"):
     return images
 
 
+def query_quantidade(query, lang="pt-br"):
+    data = query_wikidata(query)
+    try:
+        valor = int(data["results"]["bindings"][0]["number_works"]["value"])
+    except:
+        valor = 0
+    return valor
+
+
 def query_metadata_of_work(query, lang="pt-br"):
     data = query_wikidata(query)
     if "results" in data and "bindings" in data["results"]:
