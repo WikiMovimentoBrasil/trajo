@@ -76,8 +76,8 @@ def format_dates(time, lang="pt-br"):
         if lang == "en":
             date = "%dth century" % (int(year/100)+1)
         else:
-            if year % 1000 == 0:
-                date = "Século %s" % (roman.toRoman(year/100))
+            if year % 100 == 0:
+                date = "Século %s" % (roman.toRoman(math.floor(year/100)))
             else:
                 date = "Século %s" % (roman.toRoman(math.floor(year / 100) + 1))
     elif precision == 8:
