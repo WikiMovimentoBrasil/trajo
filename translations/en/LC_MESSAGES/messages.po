@@ -1,11 +1,11 @@
 
 msgid ""
 msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-08-19 18:34-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Project-Id-Version:  2.0\n"
+"Report-Msgid-Bugs-To: eder.porto@wmnobrasil.org\n"
+"POT-Creation-Date: 2020-10-26 15:26-0300\n"
+"PO-Revision-Date: 2020-10-26 13:37-0300\n"
+"Last-Translator: Éder Porto Ferreira Alves <eder.porto@wmnobrasil.org>\n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -14,34 +14,41 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: templates/base.html:17 templates/colecao.html:27 templates/inicio.html:9
+#: templates/base.html:17 templates/colecao.html:21 templates/inicio.html:9
+#: templates/topnavbar.html:2
 msgid "Página inicial"
 msgstr "Homepage"
 
-#: templates/base.html:17 templates/base.html:34 templates/topnavbar.html:2
-msgid "Trajo"
-msgstr "Trajo"
+#: templates/base.html:17
+msgid "Wiki Museu do Ipiranga - Com que roupa eu vou?"
+msgstr "Wiki Museu do Ipiranga - What clothes should I wear?"
 
-#: templates/base.html:42
-msgid "Projeto Novo Museu do Ipiranga"
-msgstr "Projeto Novo Museu do Ipiranga"
+#: templates/base.html:35 templates/inicio.html:16 templates/inicio.html:18
+msgid "Logotipo Wiki Museu do Ipiranga - Com que roupa eu vou?"
+msgstr "Logo of Wiki Museu do Ipiranga - What clothes should I wear?"
 
 #: templates/base.html:43
+msgid "Projeto Novo Museu do Ipiranga"
+msgstr "Novo Museu do Ipiranga Project"
+
+#: templates/base.html:44
 #, python-format
 msgid ""
-"<i>Trajo</i> é um aplicativo gamificado desenvolvido no contexto do "
-"<i><b>%(projeto)s</b></i>, organizado pelo <b>Grupo de Usuários Wiki "
-"Movimento Brasil</b> e o <b>Museu do Ipiranga</b>, em parceria com a "
-"<b>Fundação Banco do Brasil</b> e com realização da <b>Universidade de "
-"São Paulo</b> e a <b>Fundação de Apoio à Universidade de São Paulo</b>."
+"<i>Wiki Museu do Ipiranga - Com que roupa eu vou?</i> é um aplicativo "
+"desenvolvido no contexto do <i><b>%(projeto)s</b></i>, organizado pelo "
+"<b>Grupo de Usuários Wiki Movimento Brasil</b> e o <b>Museu do "
+"Ipiranga</b>, em parceria com a <b>Fundação Banco do Brasil</b> e com "
+"realização da <b>Universidade de São Paulo</b> e a <b>Fundação de Apoio à"
+" Universidade de São Paulo</b>."
 msgstr ""
-"<i>Trajo</i> is a gamified application developed in the context of the "
-"<i><b>%(projeto)s</b></i>, organized by the <b>User Group Wiki Movement "
-"Brazil</b> and the <b>Museu do Ipiranga</b>, in partnership with the "
-"<b>Banco do Brasil Foundation</b> and organized by the <b>University of "
-"São Paulo</b> and the <b>University of São Paulo Support Foundation</b>."
+"<i>Wiki Museu do Ipiranga - What clothes should I wear?</i> is an "
+"application developed in the context of <i><b>%(projeto)s</b></i>, "
+"organized by the<b>User Group Wiki Movimento Brasil</b> and the <b>Museu "
+"do Ipiranga</b>, in partnership with the <b>Banco do Brasil "
+"Foundation</b> and organized by the <b>University of São Paulo</b> and "
+"the <b>University of São Paulo Support Foundation</b>."
 
-#: templates/colecao.html:24
+#: templates/colecao.html:18
 #, python-format
 msgid ""
 "Esta seleção de obras do Museu do Ipiranga apresenta descritores que "
@@ -50,7 +57,7 @@ msgstr ""
 "This selection of works of Museu do Ipiranga presents descriptors that "
 "identify <i>%(p180)s</i> depicted."
 
-#: templates/colecao.html:28
+#: templates/colecao.html:22
 #, python-format
 msgid ""
 "São %(quant)s obras selecionadas. Para navegar por outras seleções de "
@@ -71,43 +78,50 @@ msgstr "REPORT ERROR"
 msgid "VOLTAR À PÁGINA INICIAL"
 msgstr "GO TO HOMEPAGE"
 
-#: templates/inicio.html:15
-msgid ""
-"Descreva as vestimentas e os objetos usados pelas<br>pessoas retratadas "
-"nas obras do Museu do Ipiranga"
-msgstr ""
-"Describe the garments and objects used by the<br>people depicted in the "
-"works of the Museu do Ipiranga"
+#: templates/inicio.html:26
+msgid "Bem-vindo(a) ao <i>Wiki Museu do Ipiranga - Com que roupa eu vou?</i>!"
+msgstr "Welcome to the <i>Wiki Museu do Ipiranga - What clothes should I wear?</i>!"
 
-#: templates/inicio.html:21 templates/inicio.html:29
+#: templates/inicio.html:29
+msgid ""
+"Neste aplicativo, você participa do trabalho de pesquisa do Museu do "
+"Ipiranga. Sua tarefa: identificar roupas, objetos e acessórios nas obras "
+"do acervo. Para participar, é preciso autenticar-se; depois, escolha uma "
+"categoria abaixo para começar."
+msgstr ""
+"In this application, you participate in the research work of the Ipiranga Museum. "
+"Your task: to identify clothes, objects and accessories in the works of the collection. "
+"To participate, you need to authenticate yourself; then choose a category below to start."
+
+#: templates/inicio.html:40 templates/inicio.html:48
 msgid "Homens"
 msgstr "Men"
 
-#: templates/inicio.html:32 templates/inicio.html:40
+#: templates/inicio.html:53 templates/inicio.html:61
 msgid "Mulheres"
 msgstr "Women"
 
-#: templates/inicio.html:43 templates/inicio.html:51
+#: templates/inicio.html:68 templates/inicio.html:76
 msgid "Jovens"
 msgstr "Young"
 
-#: templates/inicio.html:54 templates/inicio.html:62
+#: templates/inicio.html:81 templates/inicio.html:89
 msgid "Idosos"
 msgstr "Seniors"
 
-#: templates/inicio.html:65 templates/inicio.html:73
+#: templates/inicio.html:96 templates/inicio.html:104
 msgid "Nacionalidades"
 msgstr "Nationalities"
 
-#: templates/inicio.html:76 templates/inicio.html:84
+#: templates/inicio.html:109 templates/inicio.html:117
 msgid "Etnias"
 msgstr "Ethnicities"
 
-#: templates/inicio.html:87 templates/inicio.html:95
+#: templates/inicio.html:124 templates/inicio.html:132
 msgid "Ocupações"
 msgstr "Occupations"
 
-#: templates/inicio.html:98 templates/inicio.html:106
+#: templates/inicio.html:137 templates/inicio.html:145
 msgid "Pessoas conhecidas"
 msgstr "Known people"
 
@@ -116,102 +130,110 @@ msgid "Veja essa imagem no Wikimedia Commons"
 msgstr "See this image in Wikimedia Commons"
 
 #: templates/item.html:27
+msgid ""
+"Faça a sua autenticação clicando no botão 'Autenticar-se' no canto "
+"superior direito"
+msgstr ""
+"Authenticate yourself by clicking on the 'Authenticate' button in the "
+"upper right corner"
+
+#: templates/item.html:32
 msgid "Obra"
 msgstr "Work"
 
-#: templates/item.html:32
+#: templates/item.html:37
 msgid "Instância de"
 msgstr "Instance of"
 
-#: templates/item.html:43
+#: templates/item.html:48
 msgid "Data"
 msgstr "Date"
 
-#: templates/item.html:51
+#: templates/item.html:56
 msgid "Criador(a)"
 msgstr "Creator"
 
-#: templates/item.html:62
+#: templates/item.html:67
 msgid "Material"
 msgstr "Material"
 
-#: templates/item.html:73
+#: templates/item.html:78
 msgid "Encomendador"
 msgstr "Commissioner"
 
-#: templates/item.html:84
+#: templates/item.html:89
 msgid "Versão audível"
 msgstr "Audible version"
 
-#: templates/item.html:88
+#: templates/item.html:93
 msgid "Seu navegador não suporta este elemento de áudio"
 msgstr "Your browser does not support this audio element"
 
-#: templates/item.html:97
+#: templates/item.html:102
 msgid "Adicione elementos descritivos às pessoas retratadas"
 msgstr "Add descriptive elements to the people depicted"
 
-#: templates/item.html:109
+#: templates/item.html:114
 msgid "Veste"
 msgstr "Wears"
 
-#: templates/item.html:112
+#: templates/item.html:117
 msgid "Adicionar vestimenta"
 msgstr "Add garment"
 
-#: templates/item.html:112 templates/item.html:142
+#: templates/item.html:117 templates/item.html:147
 msgid "Adicionar"
 msgstr "Add"
 
-#: templates/item.html:139
+#: templates/item.html:144
 msgid "Usa"
 msgstr "Uses"
 
-#: templates/item.html:142
+#: templates/item.html:147
 msgid "Adicionar objetos usados"
 msgstr "Add used objects"
 
-#: templates/item.html:179 templates/item.html:183 templates/item.html:203
+#: templates/item.html:184 templates/item.html:188 templates/item.html:208
 msgid "Declaração"
 msgstr "Statement"
 
-#: templates/item.html:183
+#: templates/item.html:188
 msgid "Descrição da declaração"
 msgstr "Statement description"
 
-#: templates/item.html:185
+#: templates/item.html:190
 msgid "Qualificador"
 msgstr "Qualifier"
 
-#: templates/item.html:185
+#: templates/item.html:190
 msgid "Descrição do qualificador"
 msgstr "Qualifier description"
 
-#: templates/item.html:189 templates/item.html:216
+#: templates/item.html:194 templates/item.html:221
 msgid "Cancelar"
 msgstr "Cancel"
 
-#: templates/item.html:192
+#: templates/item.html:197
 msgid "Ir para declaração"
 msgstr "Go to statement"
 
-#: templates/item.html:207
+#: templates/item.html:212
 msgid "Adicionar declaração:"
 msgstr "Add statement:"
 
-#: templates/item.html:208
+#: templates/item.html:213
 msgid "Pesquise"
 msgstr "Search"
 
-#: templates/item.html:210
+#: templates/item.html:215
 msgid "Selecione uma opção:"
 msgstr "Select an option:"
 
-#: templates/item.html:217
+#: templates/item.html:222
 msgid "Adicionar declaração"
 msgstr "Add statement"
 
-#: templates/item.html:320
+#: templates/item.html:325
 msgid "Selecione um elemento"
 msgstr "Select an element"
 
@@ -221,50 +243,65 @@ msgstr "About"
 
 #: templates/sobre.html:16
 msgid ""
-"<b>Trajo</b> é um aplicativo gamificado colaborativo. O propósito é "
-"contribuir com a descrição das obras no acervo do Museu Paulista da "
-"Universidade de São Paulo."
+"Você está pronto para ser um(a) investigador(a) de acervos? É o que o "
+"aplicativo <b>Wiki Museu do Ipiranga - Com que roupa eu vou?</b> te "
+"oferece: desenvolver suas aptidões de investigação e conhecer mais a "
+"fundo o acervo do Museu do Ipiranga."
 msgstr ""
-"<b>Trajo</b> is a collaborative gamified app. The purpose is to "
-"contribute to the description of the works in the collection of the Museu"
-" Paulista daUniversidade de São Paulo."
+"Are you ready to be a collection researcher? This is what the <b>Wiki "
+"Museu do Ipiranga - What clothes should I wear?</b> app offers you: "
+"develop your research skills and learn more about the Ipiranga Museum "
+"collection."
 
 #: templates/sobre.html:17
 msgid ""
-"Está conectado à base de dados colaborativa Wikidata, um projeto irmão da"
-" Wikipédia. Toda contribuição que é feita no <b>Trajo</b> é "
-"automaticamente transmitida para o respectivo item da obra editada no "
-"Wikidata."
+"A curadoria de acervo é uma das atividades mais importantes do museu. "
+"Nela, pesquisadoras e pesquisadores -- e agora você! -- se debruçam sobre"
+" os objetos da coleção para identificar sua procedência, o que retrata, a"
+" história da peça. No aplicativo <b>Wiki Museu do Ipiranga - Com que "
+"roupa eu vou?</b>, você participa desse trabalho de curadoria, "
+"descrevendo as roupas e os acessórios das pessoas retratadas em obras do "
+"Museu do Ipiranga."
 msgstr ""
-"It is connected to the Wikidata collaborative database, a sister project "
-"of Wikipedia. Every contribution that is made to <b>Trajo</b> is "
-"automatically transmitted to the respective item of the work edited in "
-"Wikidata."
+"Curating the collection is one of the most important activities of the "
+"museum. Here, researchers -- and now you! -- look at the objects in the "
+"collection to identify their origin, what they portray, the history of "
+"the piece. In the application <b>Wiki Museu do Ipiranga - What clothes "
+"should I wear?</b>, you participate in this curatorial work, describing "
+"the clothes and accessories of the people portrayed in works at the Museu"
+" do Ipiranga."
 
 #: templates/sobre.html:18
 msgid ""
-"As edições são então transpostas para uma série de páginas na internet. "
-"Isso inclui livros colaborativos, repositórios de imagens e em alguns "
-"casos a própria Wikipédia."
+"O trabalho é sério! Suas edições são interativas e automaticamente "
+"registradas. Elas aparecem num grande documento, uma base de dados, em "
+"que pouco a pouco as informações sobre o acervo do Museu do Ipiranga são "
+"melhoradas. Você é agora tem o poder de ajudar -- que responsabilidade, "
+"né?"
 msgstr ""
-"The edits are then translated into a series of pages on the internet. "
-"This includes collaborative books, image repositories and in some cases "
-"Wikipedia itself."
+"The work is serious! Your edits are interactive and automatically "
+"recorded. They appear in a large document, a database, in which the "
+"information about the Ipiranga Museum collection is gradually improved. "
+"You are now empowered to help - what a responsibility, right?"
 
 #: templates/sobre.html:19
 msgid ""
-"O nome do aplicativo é uma brincadeira com o verbo <i>trajar</i>, fazendo"
-" referência ao foco do aplicativo em descrever vestimentas e objetos "
-"usados pelas pessoas retratadas no acervo do Museu Paulista."
+"O aplicativo é um recurso de curadoria colaborativa, em que todas e todos"
+" podem participar. Funciona como a Wikipédia, a enciclopédia em que todo "
+"mundo pode editar."
 msgstr ""
-"The name of the application is a play with the verb <i>to wear</i> in "
-"portuguese, making reference to the application's focus on describing "
-"clothing and objects used by the people depicted in the collection of the"
-" Museu Paulista."
+"The application is a collaborative curation resource, where everyone can "
+"participate. It works like Wikipedia, the encyclopedia in which everyone "
+"world can edit."
 
 #: templates/sobre.html:20
-msgid "Participe e divulgue!"
-msgstr "Participate and share!"
+#, python-format
+msgid ""
+"Mãos à obra, temos agora %(number_works)s obras cujas informações "
+"precisam de sua ajuda!"
+msgstr ""
+"Hands on, we now have %(number_works)s works whose information need your "
+"help!"
 
 #: templates/sobre.html:24
 msgid "Flask"
@@ -316,8 +353,8 @@ msgid "Versão 1.0."
 msgstr "Version 1.0"
 
 #: templates/topnavbar.html:4
-msgid "Como jogar?"
-msgstr "How to play?"
+msgid "Ajuda"
+msgstr "Help"
 
 #: templates/topnavbar.html:14
 msgid "Autenticar-se"
@@ -330,3 +367,36 @@ msgstr "Menu"
 #: templates/tutorial.html:9
 msgid "Tutorial"
 msgstr "Tutorial"
+
+#~ msgid ""
+#~ "Descreva as vestimentas e os objetos "
+#~ "usados pelas<br>pessoas retratadas nas obras"
+#~ " do Museu do Ipiranga"
+#~ msgstr ""
+#~ "Describe the garments and objects used"
+#~ " by the<br>people depicted in the "
+#~ "works of the Museu do Ipiranga"
+
+#~ msgid "Bem vindo(a) ao <i>Wiki Museu do Ipiranga - Com que roupa eu vou?</i>!"
+#~ msgstr ""
+#~ "Welcome to the <i>Wiki Museu do "
+#~ "Ipiranga - What clothes should I "
+#~ "wear?</i>!"
+
+#~ msgid ""
+#~ "Este é um aplicativo em que você"
+#~ " pode participa identificando roupas, "
+#~ "objetos e acessórios utilizados pelas "
+#~ "pessoas retratadas em obras do Museu "
+#~ "do Ipiranga! Para participar, autentique-"
+#~ "se e escolha uma das obras nas "
+#~ "categorias abaixo."
+#~ msgstr ""
+#~ "This is an application in which "
+#~ "you can participate by identifying "
+#~ "clothes, objects and accessories used by"
+#~ " the people portrayed in works at "
+#~ "the Museu do Ipiranga! To participate,"
+#~ " login and choose one of the "
+#~ "works in the categories below."
+

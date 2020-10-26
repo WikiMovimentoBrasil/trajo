@@ -168,7 +168,7 @@ def sobre():
                            number_works=quantidade)
 
 
-# Página com tutorial de como contribuir com o jogo
+# Página com tutorial de como contribuir com o aplicativo
 @app.route('/tutorial')
 def tutorial():
     username = get_username()

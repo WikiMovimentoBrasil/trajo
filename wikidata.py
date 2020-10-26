@@ -22,7 +22,7 @@ def query_wikidata(query):
         "query": query,
         "format": "json"
     }
-    result = requests.get(url=url, params=params, headers={'User-agent': 'Trajo 1.0'})
+    result = requests.get(url=url, params=params, headers={'User-agent': 'WikiMI CQREV 1.0'})
     data = result.json()
     return data
 
@@ -131,7 +131,7 @@ def api_get_items_with_labels(item, lang="pt-br"):
         'format': 'json',
         'uselang': lang,
     }
-    result = requests.get(url=url, params=params, headers={'User-agent': 'Trajo 1.0'})
+    result = requests.get(url=url, params=params, headers={'User-agent': 'WikiMI CQREV 1.0'})
     new_result = {}
     data = result.json()
     properties = data["entities"][item]["claims"]
@@ -173,7 +173,7 @@ def post_search_entity(term, lang="pt-br"):
         'limit': 50,
         'uselang': lang,
     }
-    result = requests.get(url=url, params=params, headers={'User-agent': 'Trajo 1.0'})
+    result = requests.get(url=url, params=params, headers={'User-agent': 'WikiMI CQREV 1.0'})
     data = result.json()
 
     return data
