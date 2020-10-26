@@ -105,7 +105,14 @@ input {
 }
 
 button {
-    font-size: 125%;
+    background-color: #0068a3;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 150%;
+    margin: 5px;
+    padding: 20px;
+    align: center;
 }
 
 .grid_image {
