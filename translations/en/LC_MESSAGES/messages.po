@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  2.0\n"
 "Report-Msgid-Bugs-To: eder.porto@wmnobrasil.org\n"
-"POT-Creation-Date: 2020-10-26 15:26-0300\n"
+"POT-Creation-Date: 2020-10-26 16:11-0300\n"
 "PO-Revision-Date: 2020-10-26 13:37-0300\n"
 "Last-Translator: Éder Porto Ferreira Alves <eder.porto@wmnobrasil.org>\n"
 "Language: en\n"
@@ -23,15 +23,16 @@ msgstr "Homepage"
 msgid "Wiki Museu do Ipiranga - Com que roupa eu vou?"
 msgstr "Wiki Museu do Ipiranga - What clothes should I wear?"
 
-#: templates/base.html:35 templates/inicio.html:16 templates/inicio.html:18
+#: templates/base.html:36 templates/base.html:38 templates/inicio.html:16
+#: templates/inicio.html:18
 msgid "Logotipo Wiki Museu do Ipiranga - Com que roupa eu vou?"
 msgstr "Logo of Wiki Museu do Ipiranga - What clothes should I wear?"
 
-#: templates/base.html:43
+#: templates/base.html:47
 msgid "Projeto Novo Museu do Ipiranga"
 msgstr "Novo Museu do Ipiranga Project"
 
-#: templates/base.html:44
+#: templates/base.html:48
 #, python-format
 msgid ""
 "<i>Wiki Museu do Ipiranga - Com que roupa eu vou?</i> é um aplicativo "
@@ -79,8 +80,8 @@ msgid "VOLTAR À PÁGINA INICIAL"
 msgstr "GO TO HOMEPAGE"
 
 #: templates/inicio.html:26
-msgid "Bem-vindo(a) ao <i>Wiki Museu do Ipiranga - Com que roupa eu vou?</i>!"
-msgstr "Welcome to the <i>Wiki Museu do Ipiranga - What clothes should I wear?</i>!"
+msgid "Bem-vindo(a) ao <i>Wiki Museu do Ipiranga - Com que roupa eu vou?</i>"
+msgstr "Welcome to the <i>Wiki Museu do Ipiranga - What clothes should I wear?</i>"
 
 #: templates/inicio.html:29
 msgid ""
@@ -89,9 +90,10 @@ msgid ""
 "do acervo. Para participar, é preciso autenticar-se; depois, escolha uma "
 "categoria abaixo para começar."
 msgstr ""
-"In this application, you participate in the research work of the Ipiranga Museum. "
-"Your task: to identify clothes, objects and accessories in the works of the collection. "
-"To participate, you need to authenticate yourself; then choose a category below to start."
+"In this application, you participate in the research work of the Ipiranga"
+" Museum. Your task: to identify clothes, objects and accessories in the "
+"works of the collection. To participate, you need to authenticate "
+"yourself; then choose a category below to start."
 
 #: templates/inicio.html:40 templates/inicio.html:48
 msgid "Homens"
@@ -367,36 +369,4 @@ msgstr "Menu"
 #: templates/tutorial.html:9
 msgid "Tutorial"
 msgstr "Tutorial"
-
-#~ msgid ""
-#~ "Descreva as vestimentas e os objetos "
-#~ "usados pelas<br>pessoas retratadas nas obras"
-#~ " do Museu do Ipiranga"
-#~ msgstr ""
-#~ "Describe the garments and objects used"
-#~ " by the<br>people depicted in the "
-#~ "works of the Museu do Ipiranga"
-
-#~ msgid "Bem vindo(a) ao <i>Wiki Museu do Ipiranga - Com que roupa eu vou?</i>!"
-#~ msgstr ""
-#~ "Welcome to the <i>Wiki Museu do "
-#~ "Ipiranga - What clothes should I "
-#~ "wear?</i>!"
-
-#~ msgid ""
-#~ "Este é um aplicativo em que você"
-#~ " pode participa identificando roupas, "
-#~ "objetos e acessórios utilizados pelas "
-#~ "pessoas retratadas em obras do Museu "
-#~ "do Ipiranga! Para participar, autentique-"
-#~ "se e escolha uma das obras nas "
-#~ "categorias abaixo."
-#~ msgstr ""
-#~ "This is an application in which "
-#~ "you can participate by identifying "
-#~ "clothes, objects and accessories used by"
-#~ " the people portrayed in works at "
-#~ "the Museu do Ipiranga! To participate,"
-#~ " login and choose one of the "
-#~ "works in the categories below."
 

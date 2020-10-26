@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-10-26 15:26-0300\n"
+"POT-Creation-Date: 2020-10-26 16:11-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,15 +26,16 @@ msgstr ""
 msgid "Wiki Museu do Ipiranga - Com que roupa eu vou?"
 msgstr ""
 
-#: templates/base.html:35 templates/inicio.html:16 templates/inicio.html:18
+#: templates/base.html:36 templates/base.html:38 templates/inicio.html:16
+#: templates/inicio.html:18
 msgid "Logotipo Wiki Museu do Ipiranga - Com que roupa eu vou?"
 msgstr ""
 
-#: templates/base.html:43
+#: templates/base.html:47
 msgid "Projeto Novo Museu do Ipiranga"
 msgstr ""
 
-#: templates/base.html:44
+#: templates/base.html:48
 #, python-format
 msgid ""
 "<i>Wiki Museu do Ipiranga - Com que roupa eu vou?</i> é um aplicativo "
@@ -72,7 +73,7 @@ msgid "VOLTAR À PÁGINA INICIAL"
 msgstr ""
 
 #: templates/inicio.html:26
-msgid "Bem-vindo(a) ao <i>Wiki Museu do Ipiranga - Com que roupa eu vou?</i>!"
+msgid "Bem-vindo(a) ao <i>Wiki Museu do Ipiranga - Com que roupa eu vou?</i>"
 msgstr ""
 
 #: templates/inicio.html:29
