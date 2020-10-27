@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-10-26 16:11-0300\n"
+"POT-Creation-Date: 2020-10-27 12:54-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,33 +17,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: templates/base.html:17 templates/colecao.html:21 templates/inicio.html:9
+#: templates/base.html:16 templates/colecao.html:21 templates/inicio.html:9
 #: templates/topnavbar.html:2
 msgid "Página inicial"
 msgstr ""
 
-#: templates/base.html:17
+#: templates/base.html:16
 msgid "Wiki Museu do Ipiranga - Com que roupa eu vou?"
 msgstr ""
 
-#: templates/base.html:36 templates/base.html:38 templates/inicio.html:16
+#: templates/base.html:35 templates/base.html:37 templates/inicio.html:16
 #: templates/inicio.html:18
 msgid "Logotipo Wiki Museu do Ipiranga - Com que roupa eu vou?"
 msgstr ""
 
-#: templates/base.html:47
+#: templates/base.html:46
 msgid "Projeto Novo Museu do Ipiranga"
 msgstr ""
 
-#: templates/base.html:48
+#: templates/base.html:47
 #, python-format
 msgid ""
 "<i>Wiki Museu do Ipiranga - Com que roupa eu vou?</i> é um aplicativo "
 "desenvolvido no contexto do <i><b>%(projeto)s</b></i>, organizado pelo "
 "<b>Grupo de Usuários Wiki Movimento Brasil</b> e o <b>Museu do "
 "Ipiranga</b>, em parceria com a <b>Fundação Banco do Brasil</b> e com "
-"realização da <b>Universidade de São Paulo</b> e a <b>Fundação de Apoio à"
-" Universidade de São Paulo</b>."
+"realização da <b>Universidade de São Paulo</b> e da <b>Fundação de Apoio "
+"à Universidade de São Paulo</b>."
 msgstr ""
 
 #: templates/colecao.html:18
@@ -84,35 +84,35 @@ msgid ""
 "categoria abaixo para começar."
 msgstr ""
 
-#: templates/inicio.html:40 templates/inicio.html:48
+#: templates/inicio.html:40 templates/inicio.html:42
 msgid "Homens"
 msgstr ""
 
-#: templates/inicio.html:53 templates/inicio.html:61
+#: templates/inicio.html:47 templates/inicio.html:49
 msgid "Mulheres"
 msgstr ""
 
-#: templates/inicio.html:68 templates/inicio.html:76
+#: templates/inicio.html:56 templates/inicio.html:58
 msgid "Jovens"
 msgstr ""
 
-#: templates/inicio.html:81 templates/inicio.html:89
+#: templates/inicio.html:63 templates/inicio.html:65
 msgid "Idosos"
 msgstr ""
 
-#: templates/inicio.html:96 templates/inicio.html:104
+#: templates/inicio.html:72 templates/inicio.html:74
 msgid "Nacionalidades"
 msgstr ""
 
-#: templates/inicio.html:109 templates/inicio.html:117
+#: templates/inicio.html:79 templates/inicio.html:81
 msgid "Etnias"
 msgstr ""
 
-#: templates/inicio.html:124 templates/inicio.html:132
+#: templates/inicio.html:88 templates/inicio.html:90
 msgid "Ocupações"
 msgstr ""
 
-#: templates/inicio.html:137 templates/inicio.html:145
+#: templates/inicio.html:95 templates/inicio.html:97
 msgid "Pessoas conhecidas"
 msgstr ""
 
