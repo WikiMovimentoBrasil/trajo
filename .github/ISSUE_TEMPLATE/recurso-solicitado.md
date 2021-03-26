@@ -1,0 +1,20 @@
+---
+name: Recurso solicitado
+about: Sugira uma ideia para este aplicativo
+title: PEDIDO
+labels: enhancement
+assignees: Ederporto
+
+---
+
+**Sua solicitação de recurso está relacionada a um problema? Por favor, descreva.**
+Descreva de maneira clara e concisa qual é o problema. Ex. Fico sempre frustrado quando [...]
+
+**Descreva a solução que você deseja**
+Uma descrição clara e concisa do que você deseja que seja implementado.
+
+**Descreva as alternativas que você considerou**
+Uma descrição clara e concisa de qualquer solução ou recurso alternativo que você tenha considerado.
+
+**Contexto adicional**
+Adicione qualquer outro contexto ou captura de tela sobre a solicitação de recurso aqui.
