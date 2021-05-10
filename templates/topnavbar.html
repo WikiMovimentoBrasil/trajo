@@ -2,6 +2,7 @@
     <a tabindex="0" id="inicio" href="{{url_for('inicio')}}" class="active" style="color:#0068a3">{{_("Página inicial")}}</a>
     <a tabindex="0" id="sobre" href="{{url_for('sobre')}}">{{_("Sobre")}}</a>
     <a tabindex="0" id="tutorial" href="{{url_for('tutorial')}}">{{_("Ajuda")}}</a>
+    <a tabindex="0" id="apps" href="{{url_for('apps')}}">{{_("Outros aplicativos")}}</a>
     {% if lang != 'en' %}
         <a class="right" tabindex="0" href="{{url_for('set_locale', return_to=request.script_root + request.full_path, lang='en')}}">EN</a>
     {% endif %}

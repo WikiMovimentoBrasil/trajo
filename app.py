@@ -177,6 +177,15 @@ def tutorial():
                            lang=get_locale())
 
 
+@app.route('/apps')
+def apps():
+    username = get_username()
+    lang = pt_to_ptbr(get_locale())
+    return render_template('apps.html',
+                           username=username,
+                           lang=lang)
+
+
 # Página de visualização de coleções definidas por descritores
 @app.route('/colecao/<type>')
 def colecao(type):

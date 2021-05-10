@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+    {% with lang=lang, username=username %}
+        {% include 'topnavbar.html' %}
+    {% endwith %}
+{% endblock %}
+
+{% block title %}{{ _("Outros aplicativos") }}{% endblock %}
+
+{% block banner %}{% endblock %}
+
+{% block content %}
+    <div style="font-size: 125%; text-align: left">
+        <div class="w3-row" style="padding-top:60px">
+            <div class="w3-container w3-quarter"></div>
+            <div class="w3-container w3-half">
+                <p>
+                    {{ _("A iniciativa do <b>Projeto Novo Museu do Ipiranga</b> tem desenvolvido uma série de aplicativos, chamada <b>Wiki Museu do Ipiranga</b>, com o objetivo de convidar você a atuar no trabalho de investigação e curadoria das obras e objetos do acervo do Museu do Ipiranga.") }}
+                </p>
+            </div>
+        </div>
+        {# Quantos tem? #}
+        <div class="w3-row">
+            <div class="w3-container w3-quarter"></div>
+            <div class="w3-container w3-half" style="padding-top: 30px; padding-bottom: 30px">
+                {% if lang=="en" %}
+                    <img class="banner"
+                         src="https://commons.wikimedia.org/wiki/Special:FilePath/WikiMI - Quantos tem - en.svg"
+                         alt='{{ _("Logotipo Wiki Museu do Ipiranga - Quantos tem?") }}' width="100%"/>
+                {% else %}
+                    <img class="banner"
+                         src="https://commons.wikimedia.org/wiki/Special:FilePath/WikiMI - Quantos tem - pt.svg"
+                         alt='{{ _("Logotipo Wiki Museu do Ipiranga - Quantos tem?") }}' width="100%"/>
+                {% endif %}
+            </div>
+        </div>
+        <div class="w3-row">
+            <div class="w3-container w3-quarter"></div>
+            <div class="w3-container w3-half">
+                {{ _("O primeiro aplicativo, <b>Quantos tem?</b> te convida a contar quantos elementos estão presentes nas obras do acervo do Museu do Ipiranga.") }}
+            </div>
+        </div>
+        {# Com que roupa eu vou? #}
+        <div class="w3-row">
+            <div class="w3-container w3-quarter"></div>
+            <div class="w3-container w3-half" style="padding-top: 30px; padding-bottom: 30px">
+                {% if lang=="en" %}
+                    <img class="banner"
+                         src="https://commons.wikimedia.org/wiki/Special:FilePath/WikiMI - Com que roupa eu vou - en.svg"
+                         alt='{{ _("Logotipo Wiki Museu do Ipiranga - Com que roupa eu vou?") }}' width="100%"/>
+                {% else %}
+                    <img class="banner"
+                         src="https://commons.wikimedia.org/wiki/Special:FilePath/WikiMI - Com que roupa eu vou - pt.svg"
+                         alt='{{ _("Logotipo Wiki Museu do Ipiranga - Com que roupa eu vou?") }}' width="100%"/>
+                {% endif %}
+            </div>
+        </div>
+        <div class="w3-row">
+            <div class="w3-container w3-quarter"></div>
+            <div class="w3-container w3-half">
+                {{ _("O segundo aplicativo, <b>Com que roupa eu vou?</b> te convida a descrever as roupas e os acessórios das pessoas retratadas em obras do acervo do Museu do Ipiranga.") }}
+            </div>
+        </div>
+        {# Qual a marca? #}
+        <div class="w3-row">
+            <div class="w3-container w3-quarter"></div>
+            <div class="w3-container w3-half" style="padding-top: 30px; padding-bottom: 30px">
+                {% if lang=="en" %}
+                    <img class="banner"
+                         src="https://commons.wikimedia.org/wiki/Special:FilePath/WikiMI - Qual a marca - en.svg"
+                         alt='{{ _("Logotipo Wiki Museu do Ipiranga - Qual a marca?") }}' width="100%"/>
+                {% else %}
+                    <img class="banner"
+                         src="https://commons.wikimedia.org/wiki/Special:FilePath/WikiMI - Qual a marca - pt.svg"
+                         alt='{{ _("Logotipo Wiki Museu do Ipiranga - Qual a marca?") }}' width="100%"/>
+                {% endif %}
+            </div>
+        </div>
+        <div class="w3-row">
+            <div class="w3-container w3-quarter"></div>
+            <div class="w3-container w3-half">
+                {{ _("O terceiro aplicativo, <b>Qual a marca?</b> te convida a identificar as marcas de objetos do acervo do Museu do Ipiranga.") }}
+            </div>
+        </div>
+        {# O que retrata? #}
+        <div class="w3-row">
+            <div class="w3-container w3-quarter"></div>
+            <div class="w3-container w3-half" style="padding-top: 30px; padding-bottom: 30px">
+                {% if lang=="en" %}
+                    <img class="banner"
+                         src="https://commons.wikimedia.org/wiki/Special:FilePath/WikiMI - O que retrata - en.svg"
+                         alt='{{ _("Logotipo Wiki Museu do Ipiranga - O que retrata?") }}' width="100%"/>
+                {% else %}
+                    <img class="banner"
+                         src="https://commons.wikimedia.org/wiki/Special:FilePath/WikiMI - O que retrata - pt.svg"
+                         alt='{{ _("Logotipo Wiki Museu do Ipiranga - O que retrata?") }}' width="100%"/>
+                {% endif %}
+            </div>
+        </div>
+        <div class="w3-row">
+            <div class="w3-container w3-quarter"></div>
+            <div class="w3-container w3-half">
+                {{ _("O quarto aplicativo, <b>O que retrata?</b> te convida a identificar os motivos representados em objetos do acervo do Museu do Ipiranga.") }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
