@@ -1,6 +1,7 @@
 import os
 import yaml
 import json
+import urllib.parse as ur
 from requests_oauthlib import OAuth1Session
 from flask import Flask, render_template, request, session, redirect, url_for, jsonify, g
 from flask_babel import Babel
@@ -224,6 +225,9 @@ def item(qid):
     depicts_query = all_queries["Retratas"]["query"].replace("LANGUAGE", lang).replace("QIDDAOBRA", qid)
     work_metadata = query_metadata_of_work(metadata_query, lang=lang)
     work_depicts = query_depicts_metadata(depicts_query, qid)
+
+    if "imagem" in work_metadata and work_metadata["imagem"].__len__()>0:
+        work_metadata["imagem"][0] = ur.quote(work_metadata["imagem"][0])
 
     return render_template('item.html',
                            metadata=work_metadata,

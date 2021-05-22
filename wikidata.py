@@ -2,6 +2,7 @@ import requests
 import roman
 import math
 import re
+import urllib.parse as ur
 from flask import current_app, session
 from requests_oauthlib import OAuth1Session
 
@@ -37,7 +38,7 @@ def query_by_type(query, lang="pt-br"):
         images.append({
             "qid": image["item_qid"]["value"],
             "label": image["item_label"]["value"],
-            "imagem": image["imagem"]["value"]
+            "imagem": ur.quote(image["imagem"]["value"])
         })
 
     return images
