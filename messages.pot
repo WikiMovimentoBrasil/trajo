@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-05-10 14:46-0300\n"
+"POT-Creation-Date: 2021-05-22 18:50-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,46 +29,80 @@ msgid ""
 " das obras e objetos do acervo do Museu do Ipiranga."
 msgstr ""
 
-#: templates/apps.html:30 templates/apps.html:34
+#: templates/apps.html:31 templates/apps.html:35
 msgid "Logotipo Wiki Museu do Ipiranga - Quantos tem?"
 msgstr ""
 
-#: templates/apps.html:41
+#: templates/apps.html:43
 msgid ""
-"O primeiro aplicativo, <b>Quantos tem?</b> te convida a contar quantos "
-"elementos estão presentes nas obras do acervo do Museu do Ipiranga."
+"<b>Quantos tem?</b> te convida a contar quantos elementos estão presentes"
+" nas obras do acervo do Museu do Ipiranga."
 msgstr ""
 
-#: templates/apps.html:51 templates/apps.html:55 templates/base.html:37
+#: templates/apps.html:44
+msgid ""
+"Por exemplo, quantos cordeiros estão retratados no quadro <a "
+"target=\"_blank\" href=\"https://www.wikidata.org/Q52303216\"><i>Mulher "
+"na Janela Alimentando Cordeiros, Menino Sentado numa Banqueta</i></a>, de"
+" <a target=\"_blank\" "
+"href=\"https://pt.wikipedia.org/Adrien_Henri_Vital_van_Emelen\">Adrien "
+"Henri Vital van Emelen</a>?"
+msgstr ""
+
+#: templates/apps.html:55 templates/apps.html:59 templates/base.html:37
 #: templates/base.html:39 templates/inicio.html:16 templates/inicio.html:18
 msgid "Logotipo Wiki Museu do Ipiranga - Com que roupa eu vou?"
 msgstr ""
 
-#: templates/apps.html:62
+#: templates/apps.html:67
 msgid ""
-"O segundo aplicativo, <b>Com que roupa eu vou?</b> te convida a descrever"
-" as roupas e os acessórios das pessoas retratadas em obras do acervo do "
-"Museu do Ipiranga."
+"<b>Com que roupa eu vou?</b> te convida a descrever as roupas e os "
+"acessórios das pessoas retratadas em obras do acervo do Museu do "
+"Ipiranga."
 msgstr ""
 
-#: templates/apps.html:72 templates/apps.html:76
+#: templates/apps.html:68
+msgid ""
+"Por exemplo, quais acessórios são usados por Dona Jessy de Souza Queiroz "
+"em seu <a target=\"_blank\" "
+"href=\"https://www.wikidata.org/Q52302832\"><i>retrato</i></a> por <a "
+"target=\"_blank\" href=\"https://pt.wikipedia.org/Karl_Ernst_Papf\">Karl "
+"Ernst Papf</a>?"
+msgstr ""
+
+#: templates/apps.html:79 templates/apps.html:83
 msgid "Logotipo Wiki Museu do Ipiranga - Qual a marca?"
 msgstr ""
 
-#: templates/apps.html:83
+#: templates/apps.html:91
 msgid ""
-"O terceiro aplicativo, <b>Qual a marca?</b> te convida a identificar as "
-"marcas de objetos do acervo do Museu do Ipiranga."
+"<b>Qual a marca?</b> te convida a identificar as marcas de objetos do "
+"acervo do Museu do Ipiranga."
 msgstr ""
 
-#: templates/apps.html:93 templates/apps.html:97
-msgid "Logotipo Wiki Museu do Ipiranga - O que retrata?"
+#: templates/apps.html:92
+msgid ""
+"Por exemplo, qual a marca do brinquedo <a target=\"_blank\" "
+"href=\"https://www.wikidata.org/Q65033132\"><i>Trem de luxo Nº2</i></a>?"
 msgstr ""
 
-#: templates/apps.html:104
+#: templates/apps.html:103 templates/apps.html:107
+msgid "Logotipo Wiki Museu do Ipiranga - Qual o ornamento?"
+msgstr ""
+
+#: templates/apps.html:115
 msgid ""
-"O quarto aplicativo, <b>O que retrata?</b> te convida a identificar os "
-"motivos representados em objetos do acervo do Museu do Ipiranga."
+"<b>Qual o ornamento?</b> te convida a identificar os motivos "
+"representados em objetos do acervo do Museu do Ipiranga."
+msgstr ""
+
+#: templates/apps.html:116
+msgid ""
+"Por exemplo, qual tipo de flor está representada numa <a "
+"target=\"_blank\" href=\"https://www.wikidata.org/Q106210419\"><i>sopeira"
+" com tampa</i></a> produzida pelas <a target=\"_blank\" "
+"href=\"https://pt.wikipedia.org/Indústrias_Reunidas_Fábricas_Matarazzo\">Indústrias"
+" Reunidas Fábricas Matarazzo</a>?"
 msgstr ""
 
 #: templates/base.html:18 templates/colecao.html:21 templates/inicio.html:9
