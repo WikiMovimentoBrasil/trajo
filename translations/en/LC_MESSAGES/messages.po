@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "The initiative of the <b>Novo Museu do Ipiranga Project</b> has developed"
 " a series of applications, called <b>Wiki Museu do Ipiranga</b>, with "
-"theaim to invite you to work in the investigation and curation workof the"
+"the aim to invite you to work in the investigation and curation work of the"
 " items and objects from the Ipiranga Museum collection."
 
 #: templates/apps.html:31 templates/apps.html:35
