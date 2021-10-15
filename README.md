@@ -39,4 +39,4 @@ Please make sure to update tests as appropriate.
 [GNU General Public License v3.0](https://github.com/WikiMovimentoBrasil/trajo/blob/master/LICENSE)
 
 ## Credits
-This application was developed in the context of the Novo Museu do Ipiranga Project, organized by the Wiki Movimento Brasil User Group and the Museu
+This application was developed in the context of the Novo Museu do Ipiranga Project, organized by the Wiki Movimento Brasil User Group and the Museu do Ipiranga, in partnership with the Banco do Brasil Foundation and supported by the University of São Paulo and the University of São Paulo Support Foundation.
